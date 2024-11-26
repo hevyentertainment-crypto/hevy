@@ -13,11 +13,29 @@ import 'swiper/css/effect-cards';
 import swiper_1 from "@/public/images/Rema-scaled.jpg"
 import swiper_2 from "@/public/images/a77387408f324aca89e9aa977daf7fad.jpg"
 import swiper_3 from "@/public/images/c9e9a72f4123a90d87360420c23f846b.jpg"
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Headers from '@/components/headers'
 import Inputs from '@/components/inputs'
 import { FaTimes } from 'react-icons/fa'
 
+
+export type Forms = {
+  name: string,
+    email: string,
+    song_title: string,
+    featured_artist: string,
+    release_data: string,
+    genre: string,
+    sub_genre: string,
+    year: string,
+    producer: string,
+    writer: string,
+    track_moods: string[],
+    hometown: string,
+    current_base: string,
+    tiktok: string,
+    instagram: string
+}
 
 const effectImages = [
     swiper_2,
@@ -46,7 +64,7 @@ export default function Upload() {
   const [formStep, setFormStep] = useState(1);
   const [showMoodes, setShowMoods] = useState(false)
   const [showPackage, setShowPackage] = useState(false)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<Forms>({
     name: '',
     email: '',
     song_title: '',
@@ -122,9 +140,9 @@ export default function Upload() {
   };
 
 
-  const handleChange = (target: any) => {
+  const handleChange = (target: {name: string, value:string}) => {
     const {name, value} = target
-    setFormData((prev: any) => ({
+    setFormData((prev: Forms) => ({
         ...prev,
         [name]: value
     }));
@@ -323,7 +341,7 @@ useEffect(() => {
                       }}
                       className='absolute overflow-hidden z-10 max-lg:h-full max-lg:min-w-[1200px] max-lg:hidden lg:h-full lg:min-w-[1300px] lg:w-screen lg:overflow-hidden'
                       >
-                      {effectImages.map((el : any, i : number) => {
+                      {effectImages.map((el : StaticImageData, i : number) => {
                           return <SwiperSlide key={i} className="lg:w-screen lg:overflow-x-hidden w-screen overflow-hidden"><Image
                            src={el} fill alt={`Slide ${i} `}  className="object-cover" /></SwiperSlide>;
                       })}

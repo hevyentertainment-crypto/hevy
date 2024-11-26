@@ -1,11 +1,12 @@
+import { Artists } from '@/app/artists/page'
 import Image from 'next/image'
 import React from 'react'
 
-export default function Grid({data}: any) {
+export default function Grid({data}: {data: Artists[]}) {
   return (
     <section className='w-full flex justify-between gap-10 flex-wrap'>
         {
-            data.map((datum: any, index: number) => 
+            data.map((datum: Artists, index: number) => 
                 <div key={index} className='w-[30%] gap-2 flex text-white'>
                     <div className='w-[10%] text-[2rem] font-semibold'>{index <= 9 ? 0 : ''}{index + 1}</div>
                     <div className='w-[85%]'>

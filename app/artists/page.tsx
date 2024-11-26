@@ -1,7 +1,7 @@
 "use client"
 import Footer from '@/components/footer'
 import Nav from '@/components/nav'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import React, { useState } from 'react'
 import bg from '@/public/images/Rema-scaled.jpg'
 import Headers from '@/components/headers'
@@ -11,7 +11,14 @@ import { CgDisplayGrid } from 'react-icons/cg'
 import { CiBoxList } from 'react-icons/ci'
 
 
-const artists = [
+export type Artists = {
+        image: StaticImageData,
+        name: string,
+        genre: string,
+        year: string
+}
+
+const artists: Artists[] = [
     {
         image: bg,
         name: "Ayra Starr",

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0077B6;
+        }
+        p {
+            color: #555;
+        }
+        .button {
+            background-color: #0077B6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        .logo {
+            max-width: 150px; /* Adjust as necessary */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="[Logo URL]" alt="[Your Company Name] Logo" class="logo">
+        <h1>Password Reset Successful</h1>
+        <p>Hi [User's Name],</p>
+        <p>Your password has been successfully reset. You can now log in using your new password.</p>
+        <a href="[Login Page URL]" class="button">Log In</a>
+        <p>If you did not make this change, please contact our support team immediately.</p>
+        <p>Thanks,<br>The IMMA HIRED Team</p>
+        <div class="footer">
+            <p>&copy; <span id="currentYear"></span> IMMA HIRED. All rights reserved.</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

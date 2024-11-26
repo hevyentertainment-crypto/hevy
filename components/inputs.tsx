@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Inputs({label, type='text', onChange, name, value } : {label: string, type?: string, onChange: HTMLInputElement | any, name: string, value: string }) {
+export default function Inputs({label, type='text', onChange, name, value } : {label: string, type?: string, onChange: (target: { name: string; value: string }) => void, name: string, value: string }) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     onChange(e.target)

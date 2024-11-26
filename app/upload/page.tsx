@@ -3,7 +3,7 @@ import Footer from '@/components/footer'
 import Nav from '@/components/nav'
 import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectFade, Autoplay, EffectCards, Pagination, Navigation } from 'swiper/modules'
+import { EffectFade, Autoplay } from 'swiper/modules'
 import "swiper/css/navigation";
 import 'swiper/css/effect-fade';
 import 'swiper/css/autoplay';
@@ -301,7 +301,7 @@ useEffect(() => {
                             </div>
 
 
-                            <button className='bg-black w-full rounded-lg py-2 text-white '>
+                            <button onClick={handleSubmit} className='bg-black w-full rounded-lg py-2 text-white '>
                               Select
                             </button>
                         </div>

@@ -62,7 +62,7 @@ export default function About() {
                         Founded in 2024,Hevy was born from a deep passion for music and a commitment to elevate talented artists across the globe. What started as a small collective of music lovers and industry professionals has grown into a full-service artist promotion and management agency, dedicated to helping artists turn their dreams into reality.
                         <br />
                         <br />
-                        Our team is made up of experienced professionals from various sectors of the music industry — from production and promotion to marketing and event management. We understand the challenges artists face in today's fast-paced, competitive environment, and we use our expertise to open doors, create opportunities, and build lasting success for our artists.
+                        Our team is made up of experienced professionals from various sectors of the music industry — from production and promotion to marketing and event management. We understand the challenges artists face in today&apos;s fast-paced, competitive environment, and we use our expertise to open doors, create opportunities, and build lasting success for our artists.
                     </p>
                 </div>
             </div>
@@ -72,10 +72,10 @@ export default function About() {
                     <h2 className='text-4xl font-semibold text-primary'>Our Mission</h2>
                     <p>
                         Our Mission
-                        At Hevy, our mission is simple: to empower music artists by providing them with the tools, resources, and connections they need to thrive. We believe that every artist deserves a platform to showcase their talent, and we're here to help them reach their full potential.
+                        At Hevy, our mission is simple: to empower music artists by providing them with the tools, resources, and connections they need to thrive. We believe that every artist deserves a platform to showcase their talent, and we&apos;re here to help them reach their full potential.
                         <br />
                         <br />
-                        We work tirelessly to ensure that our artists' music is heard by the right audiences, streamed across the world, and recognized by industry leaders. Our approach combines personalized strategy with a deep understanding of modern music trends to craft tailored solutions that meet each artist&apos;s unique needs.
+                        We work tirelessly to ensure that our artists&apos; music is heard by the right audiences, streamed across the world, and recognized by industry leaders. Our approach combines personalized strategy with a deep understanding of modern music trends to craft tailored solutions that meet each artist&apos;s unique needs.
                     </p>
                 </div>
 

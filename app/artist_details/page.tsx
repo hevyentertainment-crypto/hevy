@@ -3,7 +3,6 @@ import Nav from '@/components/nav'
 import Image from 'next/image'
 import React from 'react'
 import bg from '@/public/images/Rema-scaled.jpg'
-import Headers from '@/components/headers'
 import Link from 'next/link'
 
 const images = [
@@ -73,7 +72,7 @@ export default function ArtistDetails() {
                         Bella great is an Afrobeat artist known for her unique musical style, notable achievements and  key characteristics. Born and raised in Ijebu-ode, she began their journey into music at 20, inspired by her musical influences, personal experiences. With a passion for Afrobeat genre, star has quickly made a name for themselves with alot of mentions on a standout performance, release, or recognition.
                     </p>
                     <p className='w-[45%]'>
-                        Her debut project, “LOVINDAR”, released in 2024, was a chart-topping, Busting success and a critically acclaimed record. Since then, Bella Great has continued to evolve, blending Afrobeat to create a sound that's brands her uniqueness. Her work often explores themes of  love, identity, societal issues, making it relatable to fans across the globe.
+                        Her debut project, &apos;LOVINDAR&apos;, released in 2024, was a chart-topping, Busting success and a critically acclaimed record. Since then, Bella Great has continued to evolve, blending Afrobeat to create a sound that&apos;s brands her uniqueness. Her work often explores themes of  love, identity, societal issues, making it relatable to fans across the globe.
 
                     </p>
                 </div>

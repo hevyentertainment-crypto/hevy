@@ -57,9 +57,17 @@ export default function Nav() {
     }
         <section className={`${isScrolled ? ' backdrop-blur-xl text-white shadow-sm ' : 'bg-transparent'} text-white py-5 px-banner-clamp flex justify-between items-center fixed w-full z-40 `}>
         
-        <div className='text-4xl flex-col flex '>
-            <span className='font-bold text-main'>Hevy</span>
-            <span>Sounds</span>
+        <div className='flex items-center'>
+            <div >
+                <img 
+                    className='w-16 h-16'
+                    src='/images/logohevy@4x 1.svg'
+                />
+            </div>
+            <div  className='text-xl flex-col flex '>
+                <span className='font-bold text-main'>Hevy</span>
+                <span>Sounds</span>
+            </div>
         </div>
         <div className='text-sm space-x-5 relative sm:flex items-center hidden '>
             {

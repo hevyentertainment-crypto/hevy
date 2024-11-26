@@ -70,7 +70,7 @@ export default function Artists() {
     <>
         <Nav />
         <section>
-            <div className='w-screen h-[60vh] relative'>
+            <div className='w-screen h-[50vh] sm:h-[60vh] relative'>
                 <div className='absolute w-full h-full'>
                     <div className='w-full h-full relative'>
                         <Image 

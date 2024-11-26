@@ -34,16 +34,16 @@ const artists = [
 
 export default function Artists() {
   return (
-    <section className='w-screen py-32 px-banner-clamp h-fit bg-[#141414] text-white space-y-20'>
+    <section className='w-screen py-20 sm:py-32 px-banner-clamp h-fit bg-[#141414] text-white sm:space-y-20 '>
         <div className=' flex justify-between items-end'>
             <span>More Info</span>
             <button className='border-2 border-white rounded px-5 py-2 hover:bg-main hover:rounded-full hover:text-white transition-all ease-in-out'>Join our Roaster</button>
         </div>
-        <div className='sm:flex justify-between items-end'>
+        <div className='sm:flex justify-between items-end max-sm:mt-20'>
             <Headers title='Artists' />
             <span>Our recent Artists</span>
         </div>
-        <div className='w-full flex overflow-x-scroll gap-5'>
+        <div className='w-full flex overflow-x-scroll gap-5 max-sm:mt-20'>
             {
                 artists.map((artist, index) => 
                     <div key={index} className='w-full sm:w-[25%] flex-shrink-0'>
@@ -60,8 +60,8 @@ export default function Artists() {
                 )
             }
         </div>
-        <div>
-            <Link href={'/'} className='hover:text-main'>See more</Link>
+        <div className='max-sm:mt-10'>
+            <Link href={'/artists'} className='hover:text-main'>See more</Link>
         </div>
         
     </section>

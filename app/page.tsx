@@ -27,7 +27,7 @@ export default function Home() {
                                         </video>
               </div>
                 </div>
-              <div className="flex h-full gap-5 text-white flex-col justify-center px-banner-clamp w-full sm:w-[50%] absolute bg-gradient-to-r via-black/70 from-black/90 to-transparent">
+              <div className="flex h-full gap-5 text-white flex-col justify-center px-banner-clamp w-full sm:w-[50%] absolute bg-gradient-to-r sm:via-black/70 from-black/90 to-transparent">
                     <Headers title="Brand your style"  />
                     <h2 className="text-xl">
                         <p>We Promote</p>

@@ -41,7 +41,7 @@ export default function Nav() {
     <>
     {
         mobileNav &&
-        <div className='fixed w-screen h-screen bg-[#141414] z-30 py-36 text-2xl text-white px-banner-clamp flex flex-col motion-preset-slide-right '>
+        <div className='fixed w-screen h-screen bg-[#141414] z-30 py-36 text-xl text-white px-banner-clamp flex flex-col motion-preset-slide-left '>
         {
             navs.map((nav, index) => 
                 <Link href={nav.ref} key={index} className={`py-5 px-5  ${pathName === nav.ref && 'bg-secondary rounded-l-full motion-preset-fade '}`}>

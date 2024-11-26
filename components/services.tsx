@@ -20,7 +20,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className='h-fit w-screen bg-[#141414] text-white px-banner-clamp py-32'>
+    <section className='h-fit w-screen bg-[#141414] text-white px-banner-clamp py-16 sm:py-32'>
         <div className='w-[60%]'>
           <Headers title={'our services'} />
         </div>

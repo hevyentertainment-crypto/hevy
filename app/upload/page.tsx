@@ -386,11 +386,11 @@ useEffect(() => {
                                 <div className='py-5 space-y-3'>
                                   <Inputs label='Song title' onChange={handleChange} name='song_title' value={formData.song_title} />
                                   <Inputs label='Featured artists' onChange={handleChange} name='featured_artist' value={formData.featured_artist} />
-                                  <Inputs label='Release data' onChange={handleChange} name='release_data' type='date' value={formData.release_data} />
+                                  <Inputs label='Release date' onChange={handleChange} name='release_data' type='date' value={formData.release_data} />
 
                                   <div>
                                     <label htmlFor="description" className='text-xs font-semibold'>Song Description</label>
-                                    <textarea name="description" id="" cols={3} className='w-full border p-2'></textarea>
+                                    <textarea name="description" id="" cols={3} className='w-full border p-2 max-lg:text-black'></textarea>
                                   </div>
                                 </div>
                               </div>
@@ -422,7 +422,7 @@ useEffect(() => {
 
                                   <div className='relative'>
                                     <label htmlFor="" className='text-xs font-semibold'>Track mood</label>
-                                    <input onClick={() => setShowMoods(true) } type="text" onChange={() => {}} value={formData.track_moods.join(', ')} className='w-full border-2 p-2 text-xs' />
+                                    <input onClick={() => setShowMoods(true) } type="text" onChange={() => {}} value={formData.track_moods.join(', ')} className='w-full border-2 p-2 text-xs max-lg:text-black' />
 
                                    {
                                       showMoodes && (

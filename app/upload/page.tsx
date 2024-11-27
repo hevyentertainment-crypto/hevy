@@ -177,14 +177,14 @@ useEffect(() => {
   return (
     <>
         <Nav />
-        <section className='w-screen h-screen relative'>
+        <section className='w-screen h-screen overflow-x-hidden relative'>
             {/* Package overlay */}
             {
               showPackage && (
-                <div className='bg-black/80 w-screen h-screen fixed top-0 z-50 flex items-center justify-center'>
+                <div className='bg-black/80 w-screen max-lg:overflow-y-scroll h-screen fixed top-0 z-50 flex items-center justify-center max-lg:pb-32'>
                     <button onClick={() => setShowPackage(false)} className='absolute right-10 top-5 text-white text-xl p-3 bg-primary rounded-full hover:bg-red-500'><FaTimes /></button>
-                    <div className='w-[70%] h-[90%] p-5 flex justify-between'>
-                        <div className="bg-white w-[30%] h-full rounded-xl px-5 flex flex-col justify-between pb-5">
+                    <div className='2xl:w-[70%] h-[90%] p-5 flex lg:flex-row flex-col justify-between max-lg:gap-5'>
+                        <div className="bg-white w-full lg:w-[33%] xl:w-[30%] h-full rounded-xl px-5 flex flex-col justify-between pb-5">
                           <div>
                             <h2 className='font-semibold text-2xl p-5 text-center'>Hevy Gbedu</h2>
                             <div className='text-center flex items-end justify-center'>
@@ -234,7 +234,7 @@ useEffect(() => {
                               Select
                             </button>
                         </div>
-                        <div className="bg-white w-[30%] h-full rounded-xl px-5 flex flex-col justify-between pb-5">
+                        <div className="bg-white w-full lg:w-[33%] xl:w-[30%] h-full rounded-xl px-5 flex flex-col justify-between pb-5">
                           <div>
                               <h2 className='font-semibold text-2xl p-5 text-center'>Hevy Jams</h2>
                                 <div className='text-center flex items-end justify-center'>
@@ -262,7 +262,7 @@ useEffect(() => {
                               Select
                             </button>
                         </div>
-                        <div className="bg-white w-[30%] h-full rounded-xl px-5 pb-5 flex flex-col justify-between">
+                        <div className="bg-white w-full lg:w-[33%] xl:w-[30%] h-full rounded-xl px-5 pb-5 flex flex-col justify-between max-lg:mb-10">
                             <div>
                               <h2 className='font-semibold text-2xl p-5 text-center'>Hevy Banger</h2>
                               <div className='text-center flex items-end justify-center'>
@@ -347,14 +347,16 @@ useEffect(() => {
                       })}
               </Swiper>
             </div>
-            <div className='absolute w-full h-full bg-black/70 z-10 flex p-banner-clamp text-white items-center justify-between'>
-                  <div className='w-full sm:w-1/3'>
+
+            54`q
+            <div className='absolute w-full h-full bg-black/70 z-10 flex p-banner-clamp top-0 text-white items-center justify-between'>
+                  <div className='w-full sm:w-1/3 max-lg:hidden'>
                     <Headers title='Hevy Sounds' />
                     <p className='mt-3 text-secondary font-semibold'>Stand out with us</p>
                   </div>
 
-                  <div className='w-1/3 h-fit bg-white backdrop-blur-lg rounded-lg p-10 flex flex-col justify-between'>
-                      <div className='text-black'>
+                  <div className='w-full lg:w-1/3  h-fit lg:bg-white lg:backdrop-blur-lg rounded-lg p-5 lg:p-10 flex flex-col justify-between'>
+                      <div className='text-white lg:text-black'>
                           <div className='pb-5 flex justify-between'>
                             <div className={`border-2 ${formStep === 1 && 'border-main'} border-gray-300 w-[50px] rounded-full`}></div>
                             <div className={`border-2 ${formStep === 2 && 'border-main'} border-gray-300 w-[50px] rounded-full`}></div>
@@ -365,7 +367,7 @@ useEffect(() => {
                           </div>
                           {
                             formStep === 1 && (
-                              <div>
+                              <div className=''>
                                 <h1 className='text-xl font-semibold'>We Need your Details to Begin</h1>
 
                                 <div className='py-5 space-y-3'>
@@ -463,7 +465,7 @@ useEffect(() => {
                                 <h1 className='text-xl font-semibold'>Hevy Sounds</h1>
 
                                 <div className="my-4">
-                                  <label className="block text-sm font-semibold text-gray-700 mb-1">
+                                  <label className="block text-sm font-semibold text-gray-400 lg:text-gray-700 mb-1">
                                     Upload Song Lyrics
                                   </label>
                                   <input
@@ -483,7 +485,7 @@ useEffect(() => {
 
                                 {/* Upload Audio File */}
                                 <div className="mb-4">
-                                  <label className="block text-sm font-semibold text-gray-700 mb-1 ">
+                                  <label className="block text-sm font-semibold text-gray-400 lg:text-gray-700 mb-1 ">
                                     Upload Audio File
                                   </label>
                                   <input
@@ -503,7 +505,7 @@ useEffect(() => {
 
                                 {/* Upload Cover Art */}
                                 <div className="mb-4">
-                                  <label className="block text-sm font-semibold text-gray-700 mb-1">
+                                  <label className="block text-sm font-semibold text-gray-400 lg:text-gray-700 mb-1">
                                     Upload Covert Art
                                   </label>
                                   <input
@@ -528,7 +530,7 @@ useEffect(() => {
                           }
                       </div>
                       <p className='flex justify-between'>
-                        <button onClick={() => setFormStep(formStep - 1)} disabled={formStep === 1} className='border-2 w-[45%] py-2 rounded border-black text-sm text-black hover:bg-black hover:text-white'>Back</button>
+                        <button onClick={() => setFormStep(formStep - 1)} disabled={formStep === 1} className='border-2 w-[45%] py-2 rounded border-white lg:border-black text-sm text-white lg:text-black lg:hover:bg-black hover:bg-white hover:text-black lg:hover:text-white'>Back</button>
                         <button  onClick={() => setFormStep(formStep + 1)} disabled={formStep === 6} className={`${formStep === 6 && 'hidden'} w-[45%] bg-main hover:bg-main/90 rounded`}>
                          Continue
                         </button>

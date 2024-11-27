@@ -35,7 +35,7 @@ export default function About() {
     <>
         <Nav />
         <section className=''>
-            <div className='w-screen h-[60vh] relative '>
+            <div className='w-screen h-[50vh] md:h-[60vh] relative '>
                 <div className='absolute w-full h-full'>
                     <div className='w-full h-full relative'>
                         <Image 
@@ -52,11 +52,11 @@ export default function About() {
                 </div>
             </div>
 
-            <div className='w-screen h-screen bg-[#141414] flex items-center p-banner-clamp justify-evenly'>
+            <div className='w-screen h-screen bg-[#141414] flex md:flex-row flex-col items-center p-banner-clamp justify-evenly'>
                 <img 
                     src='/images/hevy MAIN WHITEE 2.svg'
                 />
-                <div className='w-[60%] text-white space-y-5'>
+                <div className='w-full md:w-[60%] text-white space-y-5'>
                     <h2 className='text-4xl font-semibold text-primary'>Our Story</h2>
                     <p>
                         Founded in 2024,Hevy was born from a deep passion for music and a commitment to elevate talented artists across the globe. What started as a small collective of music lovers and industry professionals has grown into a full-service artist promotion and management agency, dedicated to helping artists turn their dreams into reality.
@@ -67,8 +67,8 @@ export default function About() {
                 </div>
             </div>
 
-            <div className='w-screen h-screen bg-[#141414] p-banner-clamp flex justify-evenly items-center'>
-                <div className='w-[60%] text-white space-y-5'>
+            <div className='w-screen h-screen bg-[#141414] max-md:gap-5 p-banner-clamp flex md:flex-row flex-col justify-evenly items-center'>
+                <div className='w-full md:w-[60%] text-white space-y-5'>
                     <h2 className='text-4xl font-semibold text-primary'>Our Mission</h2>
                     <p>
                         Our Mission
@@ -79,7 +79,7 @@ export default function About() {
                     </p>
                 </div>
 
-                <div className='flex w-[35%] gap-3 h-[90%]'>
+                <div className='flex w-full md:w-[35%] gap-3 h-[90%]'>
                     <div className='h-full w-1/2 space-y-3'>
                         <div className='w-full h-[38%] relative'>
                             <Image 
@@ -119,16 +119,16 @@ export default function About() {
                 </div>
             </div>  
 
-            <div className='w-screen h-screen bg-[#141414] p-banner-clamp flex justify-evenly items-center'>
-                <div className='relative w-[400px] h-[500px]'>
+            <div className='w-screen h-fit md:h-screen bg-[#141414] p-banner-clamp flex max-md:gap-5 md:flex-row flex-col-reverse justify-evenly items-center'>
+                <div className='relative w-[320px] md:w-[400px] h-[400px] md:h-[500px]'>
                     <img 
                         src='/images/GcqpYTbXIAEb9bL.jpg'
-                        className='w-[400px] h-[500px] rounded-lg absolute z-20 shadow-lg shadow-gray-800'
+                        className='w-[400px] h-[400px] md:h-[500px] rounded-lg absolute z-20 md:shadow-lg shadow-gray-800'
                     />
-                    <div className='w-[400px] h-[500px] rounded-lg absolute z-10 border-2 border-primary translate-x-5 bottom-5 border-dashed'></div>
+                    <div className='w-[320px] md:w-[400px] h-[400px] md:h-[500px] rounded-lg absolute z-10 border-2 border-primary translate-x-5 bottom-5 border-dashed'></div>
                 </div>
 
-                <div className='w-[60%] text-white space-y-5'>
+                <div className='w-full md:w-[60%] text-white space-y-5'>
                     <h2 className='text-4xl font-semibold text-primary'>Our Vision</h2>
                     <p>
                         Our vision is to become the go-to platform for discovering and nurturing tomorrow’s biggest music stars. We aspire to create a community where artists from all genres and backgrounds can grow, collaborate, and make a lasting impact on the global music scene.
@@ -137,16 +137,16 @@ export default function About() {
 
             </div>
 
-            <div className='w-screen h-screen bg-[#141414] p-banner-clamp flex items-center gap-5 justify-center flex-col text-white'>
+            <div className='w-screen h-fit md:h-screen bg-[#141414] p-banner-clamp flex items-center gap-5 justify-center flex-col text-white'>
                 <h2 className='text-xl font-semibold text-primary'>What we do</h2>
-                <p className='w-1/2 text-center'>
+                <p className='w-full md:w-1/2 text-center'>
                     We offer a wide range of services designed to promote and support music artists at every stage of their careers, including
                 </p>
-                <div className='w-full h-[80%] flex justify-evenly'>
+                <div className='w-full h-fit md:h-[80%] flex md:flex-row flex-col max-md:gap-10 justify-evenly'>
                     {
                         services.map((service, index) => 
-                            <div key={index} className='w-[25%]  space-y-3'>
-                                <div className='w-full h-[65%] relative'>
+                            <div key={index} className='w-full md:w-[25%]  space-y-3'>
+                                <div className='w-full h-[300px] md:h-[65%] relative'>
                                     <Image 
                                         src={service.image}
                                         alt={service.title}
@@ -162,21 +162,21 @@ export default function About() {
                 </div>
             </div>
 
-            <div className='w-screen h-screen bg-[#141414] p-banner-clamp flex flex-col items-center justify-center'>
+            <div className='w-screen h-fit md:h-screen bg-[#141414] p-banner-clamp flex flex-col items-center justify-center'>
                     <h2 className='text-xl font-semibold text-primary w-full'>Why chose us?</h2>
-                    <div className='flex items-center gap-5 mt-3'>
-                        <img src='/images/Rectangle 18.svg' />
+                    <div className='flex md:flex-row flex-col items-center gap-5 mt-3'>
+                        <img src='/images/Rectangle 18.svg' className='max-md:w-full' />
                         <div className='text-white w-fit space-y-5'>
-                            <p className='flex flex-col w-[80%]'>
+                            <p className='flex flex-col w-full md:w-[80%]'>
                                 <span className='text-primary'>Artist-Centric Approach: </span>
                                 <span>We put artists first, ensuring they retain creative control while we handle the business side of things.
                                 </span>
                             </p>
-                            <p className='flex flex-col w-[80%]'>
+                            <p className='flex flex-col w-full md:w-[80%]'>
                                 <span className='text-primary'>Industry Connections: </span>
                                 <span>Over the years, we&apos;ve built strong relationships with key players in the music industry, from record labels and producers to venues and media outlets.</span>
                             </p>
-                            <p className='flex flex-col w-[80%]'>
+                            <p className='flex flex-col w-full md:w-[80%]'>
                                 <span className='text-primary'>Tailored Strategies:</span>
                                 <span>Every artist is different, and so is their path to success. We create custom strategies to meet the unique goals and challenges of each artist we work with.
                                 </span>
@@ -185,9 +185,9 @@ export default function About() {
                     </div>
             </div>
 
-            <div className='text-center flex flex-col items-center bg-[#141414] text-white pb-20 '>
+            <div className='text-center max-md:text-sm flex flex-col items-center p-banner-clamp bg-[#141414] text-white pb-20 '>
                 <span className='text-primary'>Ready to Work with Us?</span>
-                <span className='w-1/2'> Are you an artist looking for promotion and management? Contact us today and let’s start building your future in music.</span>
+                <span className='w-full md:w-1/2'> Are you an artist looking for promotion and management? Contact us today and let’s start building your future in music.</span>
             </div>
         </section>
         <Footer />

@@ -8,7 +8,7 @@ export default function Inputs({label, type='text', onChange, name, value } : {l
   return (
     <div className='flex flex-col gap-1'>
         <label htmlFor="" className='text-xs font-semibold'>{label}</label>
-        <input type={type} name={name} value={value} onChange={handleChange} className='border-2 rounded p-2' />
+        <input type={type} name={name} value={value} onChange={handleChange} className='border-2 rounded p-2 max-lg:text-black' />
     </div>
   )
 }

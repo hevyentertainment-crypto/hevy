@@ -7,7 +7,7 @@ export default function List({data}: {data: Artists[]}) {
     <section className='w-full text-white'>
         {
             data.map((datum:Artists, index: number) => 
-                <div key={index} className='py-5 flex items-center gap-5 motion-preset-slide-left '>
+                <div key={index} className='py-5 flex items-center gap-5 motion-preset-slide-right '>
                     <div className='text-xl sm:text-5xl'>
                         {index <= 9 ? 0 : ''}{index +1} 
                     </div>

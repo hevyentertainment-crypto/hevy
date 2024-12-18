@@ -72,7 +72,7 @@ export default function Footer() {
               HEVY SOUNDS
           </span>
           <img 
-            src='/images/logohevy@4x 1.svg'
+            src='/images/hevy MAIN WHITEE 2.svg'
           />
         </div>
 

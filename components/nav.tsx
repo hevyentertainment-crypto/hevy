@@ -18,10 +18,10 @@ const navs = [
         title: 'About us',
         ref: '/about'
     },
-    {
-        title: 'Contact us',
-        ref: '/contact'
-    }
+    // {
+    //     title: 'Contact us',
+    //     ref: '/contact'
+    // }
 ]
 export default function Nav() {
     const [isScrolled, setIsScrolled] = useState(false);

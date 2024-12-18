@@ -6,6 +6,8 @@ export default function Link() {
   const [backgroundPosition, setBackgroundPosition] = useState("0% 0%");
   const route = useRouter();
 
+  console.log(backgroundPosition)
+
   // Simple motion for the background gradient
   useEffect(() => {
     const interval = setInterval(() => {

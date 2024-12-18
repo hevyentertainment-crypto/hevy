@@ -3,7 +3,6 @@ import { useState, ChangeEvent } from "react";
 import Image from "next/image";
 import { TbArrowsExchange2 } from "react-icons/tb";
 import { useRouter } from "next/navigation";
-// Type for platform input props
 interface PlatformInputProps {
   label: string;
   icon: string;
@@ -24,6 +23,7 @@ export default function Home() {
     }
   };
 
+  console.log(image)
   return (
     <div className="min-h-screen bg-white p-6 md:py-10 md:px-32 font-sans">
       {/* Header */}

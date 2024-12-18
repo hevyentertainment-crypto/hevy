@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body{
   width: 100vw;
   overflow-x: hidden;
@@ -41,4 +42,18 @@ body{
 
 ::-webkit-scrollbar-thumb:hover {
   background: #f37171; /* Color on hover */
+}
+
+@layer utilities {
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
 }

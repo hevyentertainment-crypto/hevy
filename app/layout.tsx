@@ -4,7 +4,7 @@ import { Montserrat } from "next/font/google";
 
 
 const montserrat = Montserrat({
-    subsets: ['vietnamese'],
+    subsets: ['latin'],
     weight: ['400', '700'], 
     display: 'swap',
   });

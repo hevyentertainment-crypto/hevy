@@ -22,14 +22,14 @@ const artists = [
         image: artist,
         name: 'Ayra Star'
     },
-    {
-        image: artist,
-        name: 'Christain'
-    },
-    {
-        image: artist,
-        name: 'Rosalina'
-    },
+    // {
+    //     image: artist,
+    //     name: 'Christain'
+    // },
+    // {
+    //     image: artist,
+    //     name: 'Rosalina'
+    // },
 ]
 
 export default function Artists() {
@@ -43,20 +43,20 @@ export default function Artists() {
             <Headers title='Artists' />
             <span>Our recent Artists</span>
         </div>
-        <div className='w-full flex overflow-x-scroll gap-5 max-sm:mt-20'>
+        <div className='w-full flex justify-between max-sm:mt-20'>
             {
                 artists.map((artist, index) => 
-                    <div key={index} className='w-full sm:w-[25%] flex-shrink-0'>
+                    <Link href={'/'} key={index} className='w-full sm:w-[23%] flex-shrink-0'>
                             <div className='relative w-full  h-[300px] '> 
                                 <Image 
                                     src={artist.image}
                                     fill 
                                     alt={artist.name}
-                                    className='object-cover'
+                                    className='object-contain'
                                 />
                             </div>
                             <h2 className='py-2 text-xl'>{artist.name}</h2>
-                    </div> 
+                    </Link> 
                 )
             }
         </div>

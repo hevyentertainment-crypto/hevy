@@ -17,6 +17,10 @@ const navs = [
     {
         title: 'About us',
         ref: '/about'
+    },
+    {
+        title: 'Contact us',
+        ref: '/contact'
     }
 ]
 export default function Nav() {
@@ -50,8 +54,8 @@ export default function Nav() {
             )
         }
 
-        <Link href={'/contact'} className={`py-5 px-5  ${pathName === '/contact' && 'bg-secondary rounded-l-full motion-preset-fade '}`}>
-            Contact
+        <Link  href={'https://forms.gle/hXgdF3VXpfbByzfq5'} target='_blank' className={`py-5 px-5  ${pathName === '/contact' && 'bg-secondary rounded-l-full motion-preset-fade '}`}>
+            Upload Music
         </Link>
     </div>
     }
@@ -74,9 +78,9 @@ export default function Nav() {
                 navs.map((nav, index) => <Link key={index} href={nav.ref} className={`${pathName === nav.ref ? "navLink" : ""}`}>{nav.title.toUpperCase()}</Link>)
             }
         </div>
-        <button className={`${isScrolled ? ' bg-main  text-white' :' bg-main text-white '} rounded px-5 py-2 hidden sm:block`}>
-            Contact us
-        </button>
+        <Link href={'https://forms.gle/hXgdF3VXpfbByzfq5'} target='_blank' className={`${isScrolled ? ' bg-main  text-white' :' bg-main text-white '} rounded px-5 py-2 hidden sm:block`}>
+            Upload Music
+        </Link>
 
         <button onClick={() => setMobileNav(!mobileNav)} className='text-5xl block sm:hidden'>
             { mobileNav ? <FaTimes /> : <HiOutlineMenuAlt4 /> }

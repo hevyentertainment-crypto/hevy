@@ -347,8 +347,6 @@ useEffect(() => {
                       })}
               </Swiper>
             </div>
-
-            54`q
             <div className='absolute w-full h-full bg-black/70 z-10 flex p-banner-clamp top-0 text-white items-center justify-between'>
                   <div className='w-full sm:w-1/3 max-lg:hidden'>
                     <Headers title='Hevy Sounds' />

@@ -64,14 +64,14 @@ export default function Nav() {
         <div className='flex items-center'>
             <div >
                 <img 
-                    className='w-16 h-16'
-                    src='/images/logohevy@4x 1.svg'
+                    className='w-20 h-20'
+                    src='/images/hevy MAIN WHITEE 2.svg'
                 />
             </div>
-            <div  className='text-xl flex-col flex '>
+            {/* <div  className='text-xl flex-col flex '>
                 <span className='font-bold text-main'>Hevy</span>
                 <span>Sounds</span>
-            </div>
+            </div> */}
         </div>
         <div className='text-sm space-x-5 relative sm:flex items-center hidden '>
             {

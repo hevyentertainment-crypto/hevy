@@ -43,7 +43,7 @@ export default function Artists() {
             <Headers title='Artists' />
             <span>Our recent Artists</span>
         </div>
-        <div className='w-full flex justify-between max-sm:mt-20'>
+        <div className='w-full max-sm:gap-2 max-sm:overflow-x-scroll flex justify-between max-sm:mt-20'>
             {
                 artists.map((artist, index) => 
                     <Link href={'/'} key={index} className='w-full sm:w-[23%] flex-shrink-0'>
@@ -52,7 +52,7 @@ export default function Artists() {
                                     src={artist.image}
                                     fill 
                                     alt={artist.name}
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </div>
                             <h2 className='py-2 text-xl'>{artist.name}</h2>

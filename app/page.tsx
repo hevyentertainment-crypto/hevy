@@ -5,6 +5,7 @@ import Headers from "@/components/headers";
 import Latest from "@/components/latest";
 import Nav from "@/components/nav";
 import Services from "@/components/services";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -29,10 +30,14 @@ export default function Home() {
                 </div>
               <div className="flex h-full gap-5 text-white flex-col justify-center px-banner-clamp w-full sm:w-[50%] absolute bg-gradient-to-r sm:via-black/70 from-black/90 to-transparent">
                     <Headers title="Brand your style"  />
-                    <h2 className="text-xl">
+                    {/* <h2 className="text-xl">
                         <p>We Promote</p>
                         <p>We Evolve</p>
-                    </h2>
+                    </h2> */}
+
+                    <Link href={'https://forms.gle/hXgdF3VXpfbByzfq5'} target='_blank'  className="bg-gradient-to-br from-main to-secondary px-10 py-2 rounded text-sm w-fit">
+                        Upload Music
+                    </Link>
                 </div>
          </div>
           <Artists />

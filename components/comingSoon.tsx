@@ -1,10 +1,8 @@
 "use client"
 import React, { useState } from 'react'
 import { LiaTimesSolid } from 'react-icons/lia'
-import { MdCancel } from 'react-icons/md'
 
 export default function ComingSoon({setVisible}: {setVisible: () => void}) {
-    const [soon, setSoon] = useState(false)
   return (
     <section className='w-screen h-screen fixed px-5 backdrop-blur-3xl bg-white/10 z-50 flex items-center top-0 left-0 justify-center'>
         <div className='sm:w-1/3 w-full text-center relative bg-black text-white backdrop-blur-2xl p-5 rounded-3xl shadow-md shadow-black'>

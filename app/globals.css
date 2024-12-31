@@ -44,6 +44,9 @@ body{
   background: #f37171; /* Color on hover */
 }
 
+.icon-float{
+  animation: dance infinite ease-in-out 8s;
+}
 @layer utilities {
   @keyframes gradientShift {
     0% {
@@ -56,4 +59,18 @@ body{
       background-position: 0% 100%;
     }
   }
+
+  @keyframes dance{
+    0%{
+        transform: translate(0px, 0px);
+    }
+    50%{
+      transform: translate(10px, 12px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
 }
+
+

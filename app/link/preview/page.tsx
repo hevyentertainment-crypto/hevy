@@ -28,7 +28,7 @@ export default function Preview() {
                 </button>
             </div>
 
-            <div className='w-full sm:w-[20%] h-fit'>
+            <div className='w-full sm:w-[25%] h-fit'>
                            <div className='relative w-full h-[300px]'>
                                <Image 
                                    fill

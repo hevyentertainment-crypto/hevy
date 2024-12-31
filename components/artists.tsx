@@ -1,9 +1,10 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Headers from './headers'
 import artist from '@/public/images/Rectangle 7.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import ComingSoon from './comingSoon'
 
 const artists = [
     {
@@ -33,11 +34,13 @@ const artists = [
 ]
 
 export default function Artists() {
+     const [visible, setVisible] = useState(false);
   return (
     <section className='w-screen py-20 sm:py-32 px-banner-clamp h-fit bg-[#141414] text-white sm:space-y-20 '>
+         {visible && <ComingSoon setVisible={() => setVisible(false)} />}
         <div className=' flex justify-between items-end'>
             <span>More Info</span>
-            <button className='border-2 border-white rounded px-5 py-2 hover:bg-main hover:rounded-full hover:text-white transition-all ease-in-out'>Join our Roaster</button>
+            <button onClick={() => setVisible(true)} className='border-2 border-white rounded px-5 py-2 hover:bg-main hover:rounded-full hover:text-white transition-all ease-in-out'>Join our Roaster</button>
         </div>
         <div className='sm:flex justify-between items-end max-sm:mt-20'>
             <Headers title='Artists' />

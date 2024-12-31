@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import DanceIcons from "@/components/danceIcons";
 
 export default function Link() {
   const [backgroundPosition, setBackgroundPosition] = useState("0% 0%");
@@ -24,7 +25,7 @@ export default function Link() {
     style={{
       background: `radial-gradient(circle at var(--x, 50%) var(--y, 50%), #ff3e4d, #4a00e0)`,
       backgroundSize: "200% 200%",
-      animation: "gradientShift 12s infinite alternate ease-in-out",
+      animation: "gradientShift 20s infinite alternate ease-in-out",
     }}
   >
       {/* Navbar */}
@@ -37,13 +38,33 @@ export default function Link() {
       {/* <div className="absolute top-5 right-5 text-lg font-semibold">Explore</div> */}
 
       {/* Main Content */}
-      <div className="flex flex-col">
-        <h1 className="text-7xl md:text-[11rem] font-semibold">HEVY</h1>
-        <h2 className="text-7xl md:text-[11rem] font-semibold">SOUNDS</h2>
+      <div className="flex flex-col relative">
+        <div className="absolute left-1/4 -top-20 rounded-3xl overflow-hidden icon-float">
+          <DanceIcons icon="/icons/g10.svg"  />
+        </div>
+        <div className="absolute -right-5 top-5 rounded-3xl overflow-hidden icon-float">
+          <DanceIcons icon="/icons/boomplay_music_icon.jpeg.svg" />
+        </div>
+
+
+        <div className="absolute -right-5 bottom-5 rounded-3xl overflow-hidden icon-float">
+          <DanceIcons icon="/icons/deezer.svg" />
+        </div>
+
+        <div className="absolute -left-5 bottom-5 rounded-3xl overflow-hidden icon-float">
+          <DanceIcons icon="/icons/sportify.svg" />
+        </div>
+
+        <h1 className="text-7xl md:text-[12rem] tracking-widest font-semibold">HEVY</h1>
+        <h2 className="text-5xl text-center w-full md:text-[5rem] tracking-[1rem] sm:tracking-[1.3rem]">SOUNDS</h2>
+      </div>
+
+      <div className="mt-8">
+        • LINK GENERATOR •
       </div>
 
       {/* Buttons */}
-      <div className="mt-5 sm:mt-20 flex sm:flex-row flex-col gap-4">
+      <div className="mt-5 sm:mt-10 flex sm:flex-row flex-col gap-4">
         <button onClick={() => route.push('/link/form')} className="px-20 py-2 bg-black text-white rounded hover:bg-gray-800 transition">
           New Link
         </button>

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Headers from './headers'
 import artist from '@/public/images/Rectangle 7.svg'
 import Image from 'next/image'
+import ComingSoon from './comingSoon'
 
 const latest = [
     {
@@ -17,8 +18,10 @@ const latest = [
 ]
 
 export default function Latest() {
+    const [visible, setVisible] = useState(false)
   return (
     <section className='px-banner-clamp py-20 bg-[#141414] text-white'>
+         {visible && <ComingSoon setVisible={() => setVisible(false)} />}
         <div className='w-[60%]'>
             <Headers title='Latest Release' />
         </div>
@@ -45,7 +48,7 @@ export default function Latest() {
                 )
             }
         </div>
-        <button className='border-2 border-white hover:bg-gradient-to-r from-[#286AFD] to-[#FF5453] px-10 py-2 mt-10 hover:border-none'>
+        <button onClick={() => setVisible(true)} className='border-2 border-white hover:bg-gradient-to-r from-[#286AFD] to-[#FF5453] px-10 py-2 mt-10 '>
                 SIGN UP NOW
         </button>
     </section>

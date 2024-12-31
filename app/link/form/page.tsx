@@ -4,7 +4,6 @@ import Image from "next/image";
 import { TbArrowsExchange2 } from "react-icons/tb";
 import { useRouter } from "next/navigation";
 import { SlPicture } from "react-icons/sl";
-import DanceIcons from "@/components/danceIcons";
 interface PlatformInputProps {
   label: string;
   icon: string;

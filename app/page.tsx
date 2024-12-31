@@ -2,7 +2,6 @@
 import Artists from "@/components/artists";
 import ComingSoon from "@/components/comingSoon";
 import Footer from "@/components/footer";
-import Headers from "@/components/headers";
 import Latest from "@/components/latest";
 import Nav from "@/components/nav";
 import Services from "@/components/services";

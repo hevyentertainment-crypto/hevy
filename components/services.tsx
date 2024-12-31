@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Headers from './headers'
-import Link from 'next/link'
 import { FiArrowDownLeft } from "react-icons/fi";
 import ComingSoon from './comingSoon';
 

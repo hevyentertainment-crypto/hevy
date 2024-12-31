@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 import { LiaTimesSolid } from 'react-icons/lia'
 
 export default function ComingSoon({setVisible}: {setVisible: () => void}) {

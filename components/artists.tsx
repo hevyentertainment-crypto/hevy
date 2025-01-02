@@ -49,7 +49,7 @@ export default function Artists() {
         <div className='w-full max-sm:gap-2 max-sm:overflow-x-scroll flex justify-between max-sm:mt-20'>
             {
                 artists.map((artist, index) => 
-                    <Link href={'/'} key={index} className='w-full sm:w-[23%] flex-shrink-0'>
+                    <button onClick={() => setVisible(true)} key={index} className='w-full sm:w-[23%] flex-shrink-0'>
                             <div className='relative w-full  h-[300px] '> 
                                 <Image 
                                     src={artist.image}
@@ -59,7 +59,7 @@ export default function Artists() {
                                 />
                             </div>
                             <h2 className='py-2 text-xl'>{artist.name}</h2>
-                    </Link> 
+                    </button> 
                 )
             }
         </div>

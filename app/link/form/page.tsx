@@ -60,7 +60,7 @@ export default function Home() {
                     src={'/images/328460423_154863884017384_5731560535556506618_n-768x960.jpg'}
                     fill
                     alt="Display image"
-                    className="object-cover  rounded-xl"
+                    className="object-cover rounded-xl"
                   />
                 </div>
 
@@ -165,7 +165,7 @@ export default function Home() {
 
         {/* Buttons */}
         <div className="flex justify-center gap-4 mt-8">
-            {formStep === 2 &&  <button onClick={() => route.push('/link/preview') } className="py-2 w-full sm:w-[20%] border max-sm:mx-6 max-sm:bg-white border-blue-600 text-blue-600 rounded hover:bg-blue-50">
+            {formStep === 2 &&  <button onClick={() => route.push('/link/preview') } className="py-2 w-full sm:w-[20%] border max-sm:mx-6 max-sm:bg-main max-sm:text-white border-blue-600 text-blue-600 rounded hover:bg-blue-50">
                 Preview
               </button>}
             { formStep === 1 && <button onClick={() => setFormStep(2)} className="w-full max-sm:mx-8 sm:w-[20%] py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
@@ -188,7 +188,7 @@ const PlatformInput = ({ label, icon }: PlatformInputProps) => {
           htmlFor={label.toLowerCase().replace(" ", "-")}
           className="block mb-1 text-gray-700 font-medium"
         >
-          <Image src={icon} alt={`${label} Logo`} width={80} height={30} />
+          <Image src={icon} alt={`${label} Logo`} width={100} height={40} />
         </label>
         <input
           id={label.toLowerCase().replace(" ", "-")}

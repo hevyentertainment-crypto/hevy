@@ -44,12 +44,12 @@ export default function Home() {
         </header>
 
         {/* Back Button */}
-        <button
+       {formStep !== 1 && <button
           onClick={() => setFormStep(1)}
           className="text-white mb-4 flex items-center max-sm:px-6 hover:text-black transition font-semibold text-md"
         >
           ← Back
-        </button>
+        </button>}
 
         {/* Form Layout */}
         {

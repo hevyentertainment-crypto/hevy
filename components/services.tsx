@@ -31,8 +31,8 @@ export default function Services() {
             {
               services.map((service, index) => 
                 <button onClick={() => setVisible(true)} key={index} className='flex items-center w-full justify-between text-gray-400 py-8 hover:text-gray-300 border-b-2 border-gray-600'>
-                  <span className='text-[3rem] sm:text-[5rem] font-semibold'>{service.title}</span>
-                  <span className='text-[5rem] sm:text-[8rem]'><FiArrowDownLeft /></span>
+                  <span className='text-[2rem] min-[300px]:text-[3rem] sm:text-[5rem] font-semibold'>{service.title}</span>
+                  <span className='text-[4rem] min-[300px]:text-[5rem] sm:text-[8rem]'><FiArrowDownLeft /></span>
                 </button>
               )
             }

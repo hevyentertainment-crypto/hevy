@@ -68,7 +68,7 @@ export default function Footer() {
         </div>
 
         <div className='sm:flex px-banner-clamp justify-evenly max-sm:space-y-10  py-10 text-gray-500'>
-          <span className='text-[5rem] sm:text-[8rem] w-1/2 font-semibold leading-[5rem] sm:leading-[10rem]'>
+          <span className='text-[3rem] min-[300px]:text-[5rem] sm:text-[8rem] w-1/2 font-semibold leading-[3.5rem] min-[300px]:leading-[5rem] sm:leading-[10rem]'>
               HEVY SOUNDS
           </span>
           <img 
@@ -76,7 +76,7 @@ export default function Footer() {
           />
         </div>
 
-        <p className='flex justify-center gap-3 items-center text-gray-200 py-5 text-sm'>
+        <p className='flex justify-center gap-3 items-center text-gray-200 py-5 text-xs min-[300px]:text-sm'>
           <FaRegCopyright /> { String(year) } Hevy Sounds. All rights reserved.
         </p>
 

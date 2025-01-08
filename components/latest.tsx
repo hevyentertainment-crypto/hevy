@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
 import Headers from './headers'
-import artist from '@/public/images/Rectangle 7.svg'
+import artist from '@/public/images/image_fx_ (59).jpg'
+import artist_2 from '@/public/images/image_fx_ (40).jpg'
 import Image from 'next/image'
 import ComingSoon from './comingSoon'
 
 const latest = [
     {
         image: artist,
-        name: "XOLO",
+        name: "Vnxa SZA",
         title: 'Lost'
     },
     {
-        image: artist,
-        name: "Rema",
-        title: 'Calm down'
+        image: artist_2,
+        name: "Rezzy",
+        title: 'Like That'
     }
 ]
 
@@ -40,8 +41,8 @@ export default function Latest() {
                                 />
                             </div>
                         </div>
-                        <div className='absolute w-full h-full items-end flex p-5 justify-between'>
-                            <span className='text-xl font-semibold'>{datum.title}</span>
+                        <div className='absolute w-full h-fit bottom-0 items-end flex p-5 justify-between bg-gradient-to-b from-transparent to-black'>
+                            <span className='text-xl sm:text-4xl font-semibold'>{datum.title}</span>
                             <span className='bg-main px-10 rounded-tr-lg rounded-bl-lg py-2 shadow-lg shadow-gray-800'>{datum.name}</span>
                         </div>
                     </div>

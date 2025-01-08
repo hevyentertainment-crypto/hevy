@@ -30,10 +30,10 @@ export default function Home() {
               </div>
                 </div>
               <div className="flex h-full gap-8 text-white flex-col justify-center px-banner-clamp w-full sm:w-[50%] absolute bg-gradient-to-r sm:via-black/70 from-black/90 to-transparent">
-                    <h1 className="text-[5rem] sm:text-[10rem] font-semibold leading-[5rem] sm:leading-[8rem]">
+                    <h1 className="text-[3rem] min-[300px]:text-[5rem] sm:text-[10rem] font-semibold leading-[3rem] min-[300px]:leading-[5rem] sm:leading-[8rem]">
                         BRAND YOUR STYLE
                     </h1>
-                    <Link href={'https://forms.gle/hXgdF3VXpfbByzfq5'} target='_blank'  className="bg-transparent border border-white px-10 py-4 rounded-md text-xl w-fit">
+                    <Link href={'https://forms.gle/hXgdF3VXpfbByzfq5'} target='_blank'  className="bg-transparent border border-white px-10 py-4 rounded-md text-sm min-[300px]:text-xl w-fit">
                         Upload Music
                     </Link>
                 </div>

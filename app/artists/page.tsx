@@ -15,7 +15,6 @@ import List from '@/components/list'
 import Grid from '@/components/grid'
 import { CgDisplayGrid } from 'react-icons/cg'
 import { CiBoxList } from 'react-icons/ci'
-import { GiAirtightHatch } from 'react-icons/gi'
 
 
 export type Artists = {

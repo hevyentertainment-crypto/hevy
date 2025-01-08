@@ -14,7 +14,7 @@ import { FaHeadphones } from 'react-icons/fa'
 const artists = [
     {
         image: artist_1,
-        name: 'Franword J'
+        name: 'Franword'
     },
     {
         image: artist_2,

@@ -4,11 +4,18 @@ import Nav from '@/components/nav'
 import Image, { StaticImageData } from 'next/image'
 import React, { useState } from 'react'
 import bg from '@/public/images/Rema-scaled.jpg'
+import artist_one from '@/public/images/image_fx_ (61).jpg'
+import artist_two from '@/public/images/image_fx_ (38).jpg'
+import artist_three from '@/public/images/image_fx_ (36).jpg'
+import artist_four from '@/public/images/image_fx_ (37).jpg'
+import artist_five from '@/public/images/image_fx_ (65).jpg'
+import artist_six from '@/public/images/image_fx_ (41).jpg'
 import Headers from '@/components/headers'
 import List from '@/components/list'
 import Grid from '@/components/grid'
 import { CgDisplayGrid } from 'react-icons/cg'
 import { CiBoxList } from 'react-icons/ci'
+import { GiAirtightHatch } from 'react-icons/gi'
 
 
 export type Artists = {
@@ -20,40 +27,40 @@ export type Artists = {
 
 const artists: Artists[] = [
     {
-        image: bg,
-        name: "Ayra Starr",
+        image: artist_one,
+        name: "Lizzy Ivy",
+        genre: 'Pop',
+        year: '2023'
+    },
+    {
+        image: artist_two,
+        name: "Frankie",
         genre: 'Hip hop',
         year: '2024'
     },
     {
-        image: bg,
-        name: "Barry Jay",
-        genre: 'Hip hop',
-        year: '2024'
+        image: artist_three,
+        name: "Franword",
+        genre: 'Trap',
+        year: '2023'
     },
     {
-        image: bg,
-        name: "Rema",
-        genre: 'Hip hop',
-        year: '2024'
+        image: artist_four,
+        name: "Mikky Jon",
+        genre: 'Afrobeat',
+        year: '2022'
     },
     {
-        image: bg,
-        name: "Rema",
-        genre: 'Hip hop',
-        year: '2024'
+        image: artist_five,
+        name: "Mira Hany",
+        genre: 'Pop',
+        year: '2021'
     },
     {
-        image: bg,
-        name: "Rema",
+        image: artist_six,
+        name: "Rayboy",
         genre: 'Hip hop',
-        year: '2024'
-    },
-    {
-        image: bg,
-        name: "Rema",
-        genre: 'Hip hop',
-        year: '2024'
+        year: '2025'
     },
 ]
 

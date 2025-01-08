@@ -58,10 +58,10 @@ export default function Footer() {
                 <div className='space-y-5'>
                     <p>Hevy Sounds</p>
                     <p className='flex gap-3 text-white text-4xl sm:text-2xl'>
-                      <Link href={'/'} className='hover:motion-preset-seesaw '><FaInstagram /></Link>
-                      <Link href={'/'} className='hover:motion-preset-seesaw'><FaXTwitter /></Link>
-                      <Link href={'/'} className='hover:motion-preset-seesaw'><FaFacebook /></Link>
-                      <Link href={'/'} className='hover:motion-preset-seesaw'><FaYoutube /></Link>
+                      <Link target='_blank' href={'https://www.instagram.com/hevy_sounds?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='} className='hover:motion-preset-seesaw '><FaInstagram /></Link>
+                      <Link target='_blank' href={'https://twitter.com/hevy_sounds'} className='hover:motion-preset-seesaw'><FaXTwitter /></Link>
+                      <Link target='_blank' href={'https://m.facebook.com/public/hevysounds'} className='hover:motion-preset-seesaw'><FaFacebook /></Link>
+                      {/* <Link target='_blank' href={'/'} className='hover:motion-preset-seesaw'><FaYoutube /></Link> */}
                     </p>
                 </div>
             </div>

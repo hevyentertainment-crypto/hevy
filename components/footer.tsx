@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { FaFacebook, FaInstagram, FaRegCopyright, FaRegEnvelope, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaRegCopyright, FaRegEnvelope, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
@@ -61,7 +61,6 @@ export default function Footer() {
                       <Link target='_blank' href={'https://www.instagram.com/hevy_sounds?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='} className='hover:motion-preset-seesaw '><FaInstagram /></Link>
                       <Link target='_blank' href={'https://twitter.com/hevy_sounds'} className='hover:motion-preset-seesaw'><FaXTwitter /></Link>
                       <Link target='_blank' href={'https://m.facebook.com/public/hevysounds'} className='hover:motion-preset-seesaw'><FaFacebook /></Link>
-                      {/* <Link target='_blank' href={'/'} className='hover:motion-preset-seesaw'><FaYoutube /></Link> */}
                     </p>
                 </div>
             </div>

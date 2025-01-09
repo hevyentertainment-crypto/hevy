@@ -61,26 +61,24 @@ export default function Nav() {
     }
         <section className={`${isScrolled ? ' backdrop-blur-xl text-white shadow-sm ' : 'bg-transparent'} text-white py-5 px-banner-clamp flex justify-between items-center fixed w-full z-40 `}>
         
-        <div className='flex items-center'>
+        <div className='flex items-center w-[30%]'>
             <div >
                 <img 
                     className='w-20 h-20'
                     src='/images/hevy MAIN WHITEE 2.svg'
                 />
             </div>
-            {/* <div  className='text-xl flex-col flex '>
-                <span className='font-bold text-main'>Hevy</span>
-                <span>Sounds</span>
-            </div> */}
         </div>
         <div className='text-sm space-x-5 relative sm:flex items-center hidden '>
             {
                 navs.map((nav, index) => <Link key={index} href={nav.ref} className={`${pathName === nav.ref ? "navLink" : ""}`}>{nav.title.toUpperCase()}</Link>)
             }
         </div>
-        <Link href={'https://forms.gle/hXgdF3VXpfbByzfq5'} target='_blank' className={`${isScrolled ? ' bg-main  text-white' :' bg-main text-white '} rounded px-5 py-2 hidden sm:block`}>
-            Upload Music
-        </Link>
+        <div className='w-[30%] flex justify-end items-center'>
+            <Link href={'https://forms.gle/hXgdF3VXpfbByzfq5'} target='_blank' className={`${isScrolled ? ' bg-main  text-white' :' bg-main text-white '} rounded px-5 py-2 hidden sm:block`}>
+                Upload Music
+            </Link>
+        </div>
 
         <button onClick={() => setMobileNav(!mobileNav)} className='text-5xl block sm:hidden'>
             { mobileNav ? <FaTimes /> : <HiOutlineMenuAlt4 /> }

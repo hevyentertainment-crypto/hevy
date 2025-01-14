@@ -48,23 +48,23 @@ export default function Link() {
 
       {/* Main Content */}
       <div className="flex flex-col relative">
-        <div className="absolute left-1/4 -top-20 rounded-3xl overflow-hidden icon-float shadow-xl shadow-blue-300 border-2">
+        <div className="absolute left-1/4 -top-20 rounded-3xl backdrop-blur-xl overflow-hidden icon-float shadow-md shadow-blue-500 border-2">
           <DanceIcons icon="/icons/g10.svg"  />
         </div>
-        <div className="absolute -right-16 top-5 max-sm:hidden rounded-3xl overflow-hidden icon-float shadow-xl shadow-blue-300 border-2">
+        <div className="absolute -right-16 top-5 max-sm:hidden  backdrop-blur-xl rounded-3xl overflow-hidden icon-float shadow-md shadow-blue-500 border-2">
           <DanceIcons icon="/icons/boomplay_music_icon.jpeg.svg" />
         </div>
 
 
-        <div className="absolute -right-5 bottom-5 rounded-3xl overflow-hidden icon-float shadow-xl shadow-blue-300 border-2">
+        <div className="absolute -right-5 bottom-5  backdrop-blur-xl rounded-3xl overflow-hidden icon-float shadow-md shadow-blue-500 border-2">
           <DanceIcons icon="/icons/deezer.svg" />
         </div>
 
-        <div className="absolute -left-20 bottom-5 rounded-3xl overflow-hidden icon-float shadow-xl shadow-blue-300 border-2">
+        <div className="absolute -left-20 bottom-5  backdrop-blur-xl rounded-3xl overflow-hidden icon-float shadow-md shadow-blue-500 border-2">
           <DanceIcons icon="/icons/sportify.svg" />
         </div>
 
-        <h1 className="text-7xl md:text-[12rem] tracking-widest font-semibold">HEVY</h1>
+        <h1 className="text-8xl md:text-[12rem] tracking-widest font-semibold">HEVY</h1>
         <h2 className="text-5xl text-center w-full md:text-[5rem] tracking-[1rem] sm:tracking-[1.3rem]">SOUNDS</h2>
       </div>
 

@@ -27,7 +27,7 @@ const platformIcons = {
     shazam: '/icons/Shazam-Logo-SVG_006.png',
 }
 
-export default function Preview({setPreview, artist, platforms, image, postalImage}: {setPreview: Dispatch<SetStateAction<boolean>>, artist: Artist, platforms: Platforms, image: string, postalImage: File }) {  
+export default function Preview({setPreview, artist, platforms, image, postalImage}: {setPreview: Dispatch<SetStateAction<boolean>>, artist: Artist, platforms: Platforms, image: null | string, postalImage: File | null }) {  
     const filteredPlatforms = Object.fromEntries(
         Object.entries(platforms).filter(([value]) => value !== '')
       );
@@ -100,7 +100,7 @@ export default function Preview({setPreview, artist, platforms, image, postalIma
         <div className='w-screen h-screen backdrop-blur-xl flex sm:flex-row gap-5 flex-col justify-evenly sm:items-cenhter overflow-y-scroll px-10 sm:px-20 py-10 bg-black/50'>
             <div className='h-full flex justify-center gap- flex-col'>
                 <button
-                    onClick={setPreview.bind(null, false)}
+                    onClick={()=> setPreview(false)}
                     className="text-white mb-4 flex items-center hover:text-gray-400 transition font-semibold text-md"
                 >
                     ← Back

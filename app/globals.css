@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.navLink{
+  position: relative;
+  display: flex;
+  color: #FEAB4A;
+}
+.navLink::after {
+  position: absolute;
+  content: '';
+  background-color: #FEAB4A;
+  bottom: -10px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  transform: translateX(-50%);
+  animation: nav 0.5s;
+}
+
+::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF5453; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f37171; /* Color on hover */
+}
+
+.icon-float{
+  animation: dance infinite ease-in-out 8s;
+}
+@layer utilities {
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+
+  @keyframes dance{
+    0%{
+        transform: translate(0px, 0px);
+    }
+    50%{
+      transform: translate(10px, 12px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+}
+
+

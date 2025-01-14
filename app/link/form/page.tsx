@@ -75,7 +75,7 @@ export default function Home() {
   });
 
   const filteredPlatforms = Object.fromEntries(
-    Object.entries(platforms).filter(([_,value]) => value !== '')
+    Object.entries(platforms).filter(([key, value]) => {console.log('Key:', key, 'Value:', value); return value !== ''})
   );
 
   const handleInputChange = (label: string, value: string) => {     
@@ -160,7 +160,7 @@ export default function Home() {
 
   const  Preview = () => {  
     const filteredPlatforms = Object.fromEntries(
-        Object.entries(platforms).filter(([_, value]) => value !== '')
+        Object.entries(platforms).filter(([key, value]) => {console.log('Key:', key, 'Value:', value); return value !== ''})
       );
     const platformsArray: [string, string][] = Object.entries(platforms);
     const [submitData, {isLoading}] = useGenerateLinkMutation();

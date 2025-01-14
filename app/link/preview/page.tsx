@@ -25,7 +25,7 @@ const platformIcons = {
     shazam: '/icons/Shazam-Logo-SVG_006.png',
 }
 
-export default function Preview({setPreview, artist, platforms, image, postalImage}: {setPreview: React.Dispatch<React.SetStateAction<boolean>>, artist: Artist, platforms: Platforms, image: null | string, postalImage: null | File }) {  
+export default function Preview({setPreview, artist, platforms, image, postalImage}: {setPreview: React.Dispatch<React.SetStateAction<boolean>>, artist: Artist, platforms: Platforms, image: string, postalImage: File }) {  
     const filteredPlatforms = Object.fromEntries(
         Object.entries(platforms).filter(([value]) => value !== '')
       );

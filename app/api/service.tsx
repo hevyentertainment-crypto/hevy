@@ -16,8 +16,7 @@ export const apiSlice =  createApi({
           },
       
     } ),
-    endpoints: (builder) => ({})
-    // tagTypes: ['refreshUsers']
+    endpoints: () => ({})
 })
 
 

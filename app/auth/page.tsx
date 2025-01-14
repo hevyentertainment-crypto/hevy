@@ -21,7 +21,7 @@ import Cookies from 'js-cookie';
 
 
 export default function Auth() {
-    const [submitData, { data, error, isLoading }] = useLoginMutation();
+    const [submitData, { isLoading }] = useLoginMutation();
     const [formDetails, setFormDetails] = React.useState({
         email: '',
         password: ''

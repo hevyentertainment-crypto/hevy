@@ -57,7 +57,7 @@ export default function Home() {
   });
 
   const filteredPlatforms = Object.fromEntries(
-    Object.entries(platforms).filter(([key, value]) => value !== '')
+    Object.entries(platforms).filter(([value]) => value !== '')
   );
 
   console.log(filteredPlatforms);
@@ -142,7 +142,7 @@ export default function Home() {
     }
   }
 
-  
+
   return (
     <section className="w-screen h-screen relative">
       <ToastContainer />

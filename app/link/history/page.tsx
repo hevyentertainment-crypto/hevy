@@ -110,7 +110,7 @@ export default function History() {
                 }
                 {
                     filteredData && filteredData.map((datum: Racord, index: number) =>
-                        <tr className='bg-gray-100 p-2 hover:shadow-md shadow-gray-50 rounded-xl hover:bg-main hover:text-white'>
+                        <tr key={index} className='bg-gray-100 p-2 hover:shadow-md shadow-gray-50 rounded-xl hover:bg-main hover:text-white'>
                             <td className='py-3 px-4  rounded-l-xl'>
                                 {datum.title}
                             </td>

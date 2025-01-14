@@ -25,12 +25,12 @@ export const platformIcons = {
     shazam: '/icons/Shazam-Logo-SVG_006.png',
 }
 
-export default function Preview({setPreview, artist, platforms, image, postalImage}: {setPreview: React.Dispatch<React.SetStateAction<boolean>>, artist: Artist, platforms: Platforms, image: null | string, postalImage: any | File }) {  
+export default function Preview({setPreview, artist, platforms, image, postalImage}: {setPreview: React.Dispatch<React.SetStateAction<boolean>>, artist: Artist, platforms: Platforms, image: null | string, postalImage: null | File }) {  
     const filteredPlatforms = Object.fromEntries(
-        Object.entries(platforms).filter(([key, value]) => value !== '')
+        Object.entries(platforms).filter(([value]) => value !== '')
       );
     const platformsArray: [string, string][] = Object.entries(platforms);
-    const [submitData, {data, error, isLoading}] = useGenerateLinkMutation();
+    const [submitData, {isLoading}] = useGenerateLinkMutation();
     const router = useRouter();
 
     
@@ -41,13 +41,11 @@ export default function Preview({setPreview, artist, platforms, image, postalIma
         formData.append('name', artist.artistName);
         formData.append('title', artist.songTitle);
         formData.append('year', artist.yearOfRecording);
-        formData.append('PosterImage', postalImage);
-        formData.append('links', JSON.stringify(filteredPlatforms));
-
-        for (let [key, value] of formData.entries()) {
-            console.log(`${key}: ${value instanceof File ? value : value}`);
+        if(postalImage){
+            formData.append('posterImage', postalImage);
         }
-
+        formData.append('links', JSON.stringify(filteredPlatforms));
+        
         try{
             const res = await submitData(formData).unwrap();
             if(res){

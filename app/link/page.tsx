@@ -14,13 +14,13 @@ export default function Link() {
     route.push('/auth')
   }  
   // Simple motion for the background gradient
-  const token = Cookies.get('token')
   useEffect(() => {
       const interval = setInterval(() => {
         setBackgroundPosition(
           `${Math.random() * 100}% ${Math.random() * 100}%`
         );
       }, 3000);
+      console.log(backgroundPosition)
       return () => clearInterval(interval);
   }, []);
 

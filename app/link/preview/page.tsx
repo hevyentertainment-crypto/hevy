@@ -3,8 +3,6 @@ import Image from 'next/image'
 import React from 'react'
 import { Artist, Platforms } from '../form/page'
 import { useGenerateLinkMutation } from '@/app/api/general';
-import { Dispatch, SetStateAction } from "react";
-
 
 import { ImSpinner2 } from 'react-icons/im';
 import { ToastContainer, toast } from 'react-toastify';

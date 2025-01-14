@@ -75,11 +75,8 @@ export default function Home() {
   });
 
   const filteredPlatforms = Object.fromEntries(
-    Object.entries(platforms).filter(([value]) => value !== '')
+    Object.entries(platforms).filter(([_,value]) => value !== '')
   );
-
-  console.log(filteredPlatforms);
-
 
   const handleInputChange = (label: string, value: string) => {     
     setPlatforms({
@@ -163,7 +160,7 @@ export default function Home() {
 
   const  Preview = () => {  
     const filteredPlatforms = Object.fromEntries(
-        Object.entries(platforms).filter(([value]) => value !== '')
+        Object.entries(platforms).filter(([_, value]) => value !== '')
       );
     const platformsArray: [string, string][] = Object.entries(platforms);
     const [submitData, {isLoading}] = useGenerateLinkMutation();
@@ -176,7 +173,7 @@ export default function Home() {
         formData.append('title', formDetails.songTitle);
         formData.append('year', formDetails.yearOfRecording);
         if(image){
-            formData.append('posterImage', image);
+            formData.append('PosterImage', image);
         }
         formData.append('links', JSON.stringify(filteredPlatforms));
 

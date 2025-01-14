@@ -74,10 +74,6 @@ export default function Home() {
     amazon: ''
   });
 
-  const filteredPlatforms = Object.fromEntries(
-    Object.entries(platforms).filter(([key, value]) => {console.log('Key:', key, 'Value:', value); return value !== ''})
-  );
-
   const handleInputChange = (label: string, value: string) => {     
     setPlatforms({
       ...platforms,

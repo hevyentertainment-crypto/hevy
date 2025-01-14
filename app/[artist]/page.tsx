@@ -4,8 +4,23 @@ import React, { useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { useGetBrandQuery } from '../api/general'
 import { ImSpinner2 } from 'react-icons/im'
-import { platformIcons } from '../link/preview/page'
 import Link from 'next/link'
+
+const platformIcons = {
+    spotify: '/icons/music-service_spotify 1.svg',
+    apple: '/icons/apple-music.svg',
+    youtube: 'https://services.linkfire.com/logo_youtubemusic_onlight.svg',
+    soundcloud: 'https://services.linkfire.com/logo_soundcloud_onlight.svg',
+    deezer: '/icons/music-service_deezer 1.svg',
+    tidal: '/icons/music-service_tidal 1.svg',
+    amazon: '/icons/music-service_amazon 1.svg',
+    audiomack: 'https://services.linkfire.com/logo_audiomack_onlight.svg',
+    bandcamp: '/icons/music-service_bandcamp.svg',
+    boomplay: '/icons/music-service_boomplay_updated 1.svg',
+    google: '/icons/music-service_google.svg',
+    itunes: '/icons/music-service_itunes 1.svg',
+    shazam: '/icons/Shazam-Logo-SVG_006.png',
+}
 
 export default function ArtistLink() {
     const route = useRouter()

@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/navigation';
 
-export const platformIcons = {
+const platformIcons = {
     spotify: '/icons/music-service_spotify 1.svg',
     apple: '/icons/apple-music.svg',
     youtube: 'https://services.linkfire.com/logo_youtubemusic_onlight.svg',
@@ -45,7 +45,7 @@ export default function Preview({setPreview, artist, platforms, image, postalIma
             formData.append('posterImage', postalImage);
         }
         formData.append('links', JSON.stringify(filteredPlatforms));
-        
+
         try{
             const res = await submitData(formData).unwrap();
             if(res){

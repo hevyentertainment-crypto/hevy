@@ -30,10 +30,18 @@ const adminSlice = apiSlice.injectEndpoints({
                 url: `/song/${id}`,
                 method: 'GET'
             })
-           
-        })
+        }),
+
+        forgotPassword: builder.mutation({
+            query: (formDetails) => ({
+                url: '/auth/forgot',
+                method: 'POST',
+                body: {...formDetails}
+            })
+        }),
+
         
     })
 })
 
-export const { useLoginMutation, useGenerateLinkMutation, useGetUploadedSongsQuery, useGetBrandQuery } = adminSlice
+export const { useLoginMutation, useGenerateLinkMutation, useGetUploadedSongsQuery, useGetBrandQuery, useForgotPasswordMutation } = adminSlice

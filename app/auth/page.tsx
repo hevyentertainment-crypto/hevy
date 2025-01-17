@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import "swiper/css/navigation";
 import 'swiper/css/effect-fade';
 import 'swiper/css/autoplay';
@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectFade, Autoplay } from 'swiper/modules'
 import Image, { StaticImageData } from 'next/image';
 import Headers from '@/components/headers';
-import { useLoginMutation } from '../api/general';
+import { useForgotPasswordMutation, useLoginMutation } from '../api/general';
 import { ImSpinner2 } from 'react-icons/im';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,9 +22,14 @@ import Cookies from 'js-cookie';
 
 export default function Auth() {
     const [submitData, { isLoading }] = useLoginMutation();
-    const [formDetails, setFormDetails] = React.useState({
+    const [ forgetData, { isLoading: forgetLoading, isError, error }] = useForgotPasswordMutation();
+    const [ forget, setForget ] = useState(false);
+    const [formDetails, setFormDetails] = useState({
         email: '',
         password: ''
+    });
+    const [forgetDetails, setForgetDetails] = useState({
+        email: formDetails.email
     });
 
 
@@ -79,6 +84,36 @@ export default function Auth() {
         }
     }
 
+    const handleForget = async (e : React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try{
+            const res = await forgetData(forgetDetails).unwrap();
+            if(res){
+                toast.success('Password Reset Link Sent', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
+            }
+        }catch(e){
+            toast.error("User not found", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+    }
+
   return (
     <section className='w-screen h-screen overflow-x-hidden'>
         <ToastContainer />
@@ -110,32 +145,48 @@ export default function Auth() {
                         <p className='mt-3 text-secondary font-semibold'>Link Generator</p>
                 </div>
             </div>
+            { !forget ?
+                <div className='w-full lg:w-[40%] p-5 sm:p-16 max-sm:text-white sm:bg-white rounded'>
+                    <h2 className='font-semibold sm:hidden'>
+                        HEVY SOUNDS
+                    </h2>
+                        <h2 className='text-2xl font-semibold'>Sign in</h2>
+                    <form method='POST' onSubmit={handleSubmit} >
+                        <div className='flex flex-col mt-5 text-black'>
+                                <label htmlFor="email" className='text-white sm:text-black'>Email</label>
+                                <input value={formDetails.email} onChange={handleChange} name='email' type="email" className='p-2 rounded border-2 focus:outline-indigo-200' />
+                            </div>
+                            <div className='flex flex-col mt-5'>
+                                <label htmlFor="email" className='text-white sm:text-black'>Password</label>
+                                <input value={formDetails.password} type="password" onChange={handleChange} name='password' className='p-2 rounded border-2 focus:outline-indigo-200 text-black' />
+                            </div>
 
-            <div className='w-full lg:w-[40%] p-5 sm:p-16 max-sm:text-white sm:bg-white rounded'>
-                
-            <h2 className='font-semibold sm:hidden'>
-                HEVY SOUNDS
-            </h2>
-                <h2 className='text-2xl font-semibold'>Sign in</h2>
-               <form method='POST' onSubmit={handleSubmit} >
-                <div className='flex flex-col mt-5 text-black'>
-                        <label htmlFor="email" className='text-white'>Email</label>
-                        <input value={formDetails.email} onChange={handleChange} name='email' type="text" className='p-2 rounded border-2 focus:outline-indigo-200' />
-                    </div>
-                    <div className='flex flex-col mt-5'>
-                        <label htmlFor="email" className='text-white'>Password</label>
-                        <input value={formDetails.password} type="password" onChange={handleChange} name='password' className='p-2 rounded border-2 focus:outline-indigo-200 text-black' />
-                    </div>
+                            <button disabled={isLoading}  className='bg-main rounded text-center text-white py-2 w-full mt-10 sm:mt-10 hover:bg-main/70'>
+                                { isLoading ? <ImSpinner2 className='animate-spin text-2xl mx-auto' /> : "Sign in" }
+                            </button>
+                    </form>
 
-                    <button disabled={isLoading}  className='bg-main rounded text-center text-white py-2 w-full mt-10 sm:mt-10 hover:bg-main/70'>
-                        { isLoading ? <ImSpinner2 className='animate-spin text-2xl mx-auto' /> : "Sign in" }
+                    <button onClick={() => setForget(true)} className='text-xs text-main font-semibold'>
+                        Forgot Password?
                     </button>
-               </form>
-
-               <button className='text-xs text-main font-semibold'>
-               Forgot Password?
-               </button>
-            </div>
+                </div>
+            :
+                <div className='w-full lg:w-[40%] p-5 sm:p-16 max-sm:text-white sm:bg-white rounded'>
+                    <button onClick={() => setForget(false)} className='text-xs text-main font-semibold'>
+                        Back
+                    </button>
+                    <h2 className='text-2xl font-bold '>Forgot Password</h2>
+                    <form  method='POST' onSubmit={handleForget} >
+                        <div className='flex flex-col mt-5'>
+                            <label htmlFor="email" className='text-white sm:text-black'>Email</label>
+                            <input value={forgetDetails.email} onChange={(e) =>setForgetDetails({email: e.target.value})} name='email' type="text" className='p-2 rounded border-2 focus:outline-indigo-200  max-sm:text-black' />
+                        </div>
+                        <button  className='bg-main rounded text-center text-white py-2 w-full mt-10 sm:mt-10 hover:bg-main/70'>
+                            { forgetLoading ? <ImSpinner2 className='animate-spin text-2xl mx-auto' /> : "Reset Password" }
+                        </button>
+                    </form>
+                </div>
+            }
         </div>
     </section>
   )

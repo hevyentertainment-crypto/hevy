@@ -56,11 +56,11 @@ export default function History() {
       );
 
   return (
-    <section className='w-screen h-screen'>
+    <section className='w-screen h-fit min-h-screen'>
         <ToastContainer />
 
-       <section className='w-screen h-screen absolute'>
-        <div className='relative w-screen h-screen'>
+       <section className='w-screen  h-fit min-h-screen absolute'>
+        <div className='relative w-screen h-fit min-h-screen'>
                 <Image
                     alt="background Image"
                     src={'/images/image_fx_ (57).jpg'}
@@ -69,7 +69,7 @@ export default function History() {
                 />
             </div>
        </section>
-        <section className='py-10 px-5 sm:px-16 w-screen absolute z-50 bg-black/50 backdrop-blur-lg h-screen max-sm:overflow-y-scroll'>
+        <section className='py-10 px-5 sm:px-16 w-screen absolute z-50 bg-black/50 backdrop-blur-lg  h-fit min-h-screen max-sm:overflow-y-scroll'>
          <header className="flex sm:flex-row flex-col justify-between mb-8 sm:items-end">
             <h1 className="text-4xl sm:text-8xl font-extrabold text-white max-sm:mb-2">HEVY SOUNDS</h1>
             <div>

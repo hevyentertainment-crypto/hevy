@@ -22,7 +22,7 @@ import Cookies from 'js-cookie';
 
 export default function Auth() {
     const [submitData, { isLoading }] = useLoginMutation();
-    const [ forgetData, { isLoading: forgetLoading, isError, error }] = useForgotPasswordMutation();
+    const [ forgetData, { isLoading: forgetLoading }] = useForgotPasswordMutation();
     const [ forget, setForget ] = useState(false);
     const [formDetails, setFormDetails] = useState({
         email: '',
@@ -101,6 +101,7 @@ export default function Auth() {
                 });
             }
         }catch(e){
+            console.log(e)
             toast.error("User not found", {
                 position: "top-center",
                 autoClose: 5000,
@@ -147,10 +148,10 @@ export default function Auth() {
             </div>
             { !forget ?
                 <div className='w-full lg:w-[40%] p-5 sm:p-16 max-sm:text-white sm:bg-white rounded'>
-                    <h2 className='font-semibold sm:hidden'>
+                    <h2 className='font-semibold text-4xl sm:hidden mb-5'>
                         HEVY SOUNDS
                     </h2>
-                        <h2 className='text-2xl font-semibold'>Sign in</h2>
+                    <h2 className='text-2xl font-semibold'>Sign in</h2>
                     <form method='POST' onSubmit={handleSubmit} >
                         <div className='flex flex-col mt-5 text-black'>
                                 <label htmlFor="email" className='text-white sm:text-black'>Email</label>

@@ -33,7 +33,7 @@ export default function Home() {
                     <h1 className="text-[3rem] min-[300px]:text-[5rem] sm:text-[10rem] font-semibold leading-[3rem] min-[300px]:leading-[5rem] sm:leading-[8rem]">
                         BRAND YOUR STYLE
                     </h1>
-                    <Link href={'https://forms.gle/hXgdF3VXpfbByzfq5'} target='_blank'  className="bg-transparent border border-white px-10 py-4 rounded-md text-sm min-[300px]:text-xl w-fit">
+                    <Link href={'https://forms.gle/vaufdL6mb2wzeBov5'} target='_blank'  className="bg-transparent border border-white px-10 py-4 rounded-md text-sm min-[300px]:text-xl w-fit">
                         Upload Music
                     </Link>
                 </div>

@@ -54,7 +54,7 @@ export default function Nav() {
             )
         }
 
-        <Link  href={'https://forms.gle/hXgdF3VXpfbByzfq5'} target='_blank' className={`py-5 px-5  ${pathName === '/contact' && 'bg-secondary rounded-l-full motion-preset-fade '}`}>
+        <Link  href={'https://forms.gle/vaufdL6mb2wzeBov5'} target='_blank' className={`py-5 px-5  ${pathName === '/contact' && 'bg-secondary rounded-l-full motion-preset-fade '}`}>
             Upload Music
         </Link>
     </div>
@@ -75,7 +75,7 @@ export default function Nav() {
             }
         </div>
         <div className='w-[30%] flex justify-end items-center'>
-            <Link href={'https://forms.gle/hXgdF3VXpfbByzfq5'} target='_blank' className={`${isScrolled ? ' bg-main  text-white' :' bg-main text-white '} rounded px-5 py-2 hidden sm:block`}>
+            <Link href={'https://forms.gle/vaufdL6mb2wzeBov5'} target='_blank' className={`${isScrolled ? ' bg-main  text-white' :' bg-main text-white '} rounded px-5 py-2 hidden sm:block`}>
                 Upload Music
             </Link>
         </div>

@@ -121,12 +121,12 @@ export default function History() {
                                 <button onClick={() => handleCopy(`hevyhub.com/${datum.linkId}`)} >
                                     hevyhub.com/{datum.linkId}
                                 </button>
-                                <span  onClick={() => handleCopy('hevy.info/xolo-love')}>
+                                <span  onClick={() => handleCopy(`hevyhub.com/${datum.linkId}`)} >
                                     <LuCopy />
                                 </span>
                             </td>
                             <td className='py-3   rounded-r-xl'>
-                                { moment(datum.createdAt).format('ha : MMM D, YYYY') }
+                                { moment(datum.createdAt).format('h:mma : MMM D, YYYY') }
                             </td>
                         </tr>
                     )

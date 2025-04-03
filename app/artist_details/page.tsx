@@ -4,26 +4,13 @@ import Nav from '@/components/nav'
 import Image from 'next/image'
 import React from 'react'
 import bg from '@/public/images/Rema-scaled.jpg'
-import image1 from '@/public/images/IMG_2999.png'
-import image2 from '@/public/images/IMG_3001.png'
-import image3 from '@/public/images/IMG_2998.png'
 import Link from 'next/link'
 import { useArtistContext } from '@/components/artistContext'
 
-const images = [
-    {
-        image: image1
-    },
-    {
-        image: image3
-    },
-    {
-        image: image2
-    },
-]
 
 export default function ArtistDetails() {
-    const { artistDetails, setArtistDetails } = useArtistContext()
+    const { artistDetails } = useArtistContext()
+
   return (
     <>
         <Nav />

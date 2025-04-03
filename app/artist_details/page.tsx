@@ -1,3 +1,4 @@
+"use client"
 import Footer from '@/components/footer'
 import Nav from '@/components/nav'
 import Image from 'next/image'
@@ -7,6 +8,7 @@ import image1 from '@/public/images/IMG_2999.png'
 import image2 from '@/public/images/IMG_3001.png'
 import image3 from '@/public/images/IMG_2998.png'
 import Link from 'next/link'
+import { useArtistContext } from '@/components/artistContext'
 
 const images = [
     {
@@ -21,6 +23,7 @@ const images = [
 ]
 
 export default function ArtistDetails() {
+    const { artistDetails, setArtistDetails } = useArtistContext()
   return (
     <>
         <Nav />
@@ -39,23 +42,23 @@ export default function ArtistDetails() {
 
                     <div className='absolute w-full h-full bg-black/80 flex md:flex-row flex-col items-center justify-center md:justify-between max-md:space-y-3 text-white px-banner-clamp '>
                         <h1 className="text-[5rem] font-semibold leading-[5rem] w-full md:w-1/3">
-                        Jvstdede
+                        {artistDetails?.name}
                         </h1>
                         <p className='text-gray-300 max-md:w-full'>
-                            Afro-pop
+                            {artistDetails?.genre}
                         </p>
                         <h3 className='text-[4rem] max-md:w-full'>
-                            01
+                            {artistDetails?.rank}
                         </h3>
                     </div>
             </div>
 
             <div className='w-screen p-banner-clamp flex max-md:flex-wrap bg-[#141414] justify-center gap-5'>
                 {
-                    images.map((image, index) =>
-                        <div key={index} className='w-[48%] md:w-[22%] h-[200px] md:h-[400px] relative mb-3'>
+                    artistDetails?.pictures.map((image, index) =>
+                        <div key={index} className='w-[80%] md:w-[22%] h-[300px] md:h-[400px] relative mb-3'>
                             <Image 
-                                src={image.image}
+                                src={`/images/${image}`}
                                 fill
                                 alt='Artist Image'
                                 className='object-cover'
@@ -65,18 +68,14 @@ export default function ArtistDetails() {
                 }
             </div>
 
-            <div className='bg-[#141414] px-banner-clamp py-5 text-white space-y-4'>
+            {artistDetails?.biography && <div className='bg-[#141414] px-banner-clamp py-5 text-white space-y-4'>
                 <h2 className='text-xl  text-primary'>Biography</h2>
                 <div className='flex md:flex-row flex-col justify-between'>
                     <p className='w-full md:w-[45%]'>
-                        Bella great is an Afrobeat artist known for her unique musical style, notable achievements and  key characteristics. Born and raised in Ijebu-ode, she began their journey into music at 20, inspired by her musical influences, personal experiences. With a passion for Afrobeat genre, star has quickly made a name for themselves with alot of mentions on a standout performance, release, or recognition.
-                    </p>
-                    <p className='w-full md:w-[45%]'>
-                        Her debut project, &apos;LOVINDAR&apos;, released in 2024, was a chart-topping, Busting success and a critically acclaimed record. Since then, Bella Great has continued to evolve, blending Afrobeat to create a sound that&apos;s brands her uniqueness. Her work often explores themes of  love, identity, societal issues, making it relatable to fans across the globe.
-
+                        {artistDetails?.biography}
                     </p>
                 </div>
-            </div>
+            </div>}
 
             <div className='bg-[#141414] px-banner-clamp flex items-center justify-center gap-10 py-5 w-screen'>
                 <Link target='_blank' href={'https://open.spotify.com/track/2OrI6bYoBWHi2e27EvAa6d?si=PbFa2G2rSW2svPSa7wo2Aw&context=spotify%3Aalbum%3A3Oh6irkHpgqtRGtVqALUiA'} className='w-[20%] md:w-[10%] transition-transform transform hover:scale-105 duration-300'>

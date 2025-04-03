@@ -4,6 +4,9 @@ import "./globals.css";
 import { Montserrat } from "next/font/google";
 import { Provider } from "react-redux";
 import { store } from "./api/store";
+import { useContext, useState, createContext } from "react";
+import { ArtistProvider } from "@/components/artistContext";
+
 
 
 const montserrat = Montserrat({
@@ -12,23 +15,29 @@ const montserrat = Montserrat({
     display: 'swap',
   });
 
-console.log = () => {};
-console.info = () => {};
-console.warn = () => {};
-console.error=()=>{};
+// console.log = () => {};
+// console.info = () => {};
+// console.warn = () => {};
+// console.error=()=>{};
+
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+
   return (
     <html lang="en">
       <body
         className={`${montserrat.className} antialiased`}
       >
         <Provider store={store}>
-          {children}
+          <ArtistProvider>
+            {children}
+          </ArtistProvider>
         </Provider>
       </body>
     </html>

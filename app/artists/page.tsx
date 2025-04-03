@@ -5,7 +5,7 @@ import Image, { StaticImageData } from 'next/image'
 import React, { useState } from 'react'
 import bg from '@/public/images/Rema-scaled.jpg'
 import artist_one from '@/public/images/IMG_3001.png'
-import artist_two from '@/public/images/image_fx_ (38).jpg'
+import artist_two from '@/public/images/Daniel Blizz image 2.png'
 import artist_three from '@/public/images/image_fx_ (36).jpg'
 import artist_four from '@/public/images/image_fx_ (37).jpg'
 import artist_five from '@/public/images/image_fx_ (65).jpg'
@@ -15,53 +15,10 @@ import List from '@/components/list'
 import Grid from '@/components/grid'
 import { CgDisplayGrid } from 'react-icons/cg'
 import { CiBoxList } from 'react-icons/ci'
+import { artists } from '@/components/artists'
 
 
-export type Artists = {
-        image: StaticImageData,
-        name: string,
-        genre: string,
-        year: string
-}
 
-const artists: Artists[] = [
-    {
-        image: artist_one,
-        name: "Jvstdede",
-        genre: 'Afro-Pop',
-        year: '2023'
-    },
-    {
-        image: artist_two,
-        name: "Frankie",
-        genre: 'Hip hop',
-        year: '2024'
-    },
-    {
-        image: artist_three,
-        name: "Franword",
-        genre: 'Trap',
-        year: '2023'
-    },
-    {
-        image: artist_four,
-        name: "Mikky Jon",
-        genre: 'Afrobeat',
-        year: '2022'
-    },
-    {
-        image: artist_five,
-        name: "Mira Hany",
-        genre: 'Pop',
-        year: '2021'
-    },
-    {
-        image: artist_six,
-        name: "Rayboy",
-        genre: 'Hip hop',
-        year: '2025'
-    },
-]
 
 export default function Artists() {
     const [isList, setIsList] = useState(true);

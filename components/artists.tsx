@@ -1,39 +1,67 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Headers from './headers'
-import artist_2 from '@/public/images/image_fx_ (36).jpg'
-import artist_1 from '@/public/images/IMG_3001.png'
-import artist_3 from '@/public/images/image_fx_ (65).jpg'
-import artist_4 from '@/public/images/image_fx_ (41).jpg'
 import { useRouter } from 'next/navigation'
+
+import { ArtistDetailsType, useArtistContext } from './artistContext'
 
 import Image from 'next/image'
 import Link from 'next/link'
 import ComingSoon from './comingSoon'
 import { FaHeadphones } from 'react-icons/fa'
 
-const artists = [
+export const artists: ArtistDetailsType[] = [
     {
-        image: artist_1,
-        name: 'Jvstdede'
+        image:  'Daniel Blizz image 2.png',
+        name: 'Daniel Blizz',
+        pictures: [
+            'Daniel Blizz image 2.png',
+            'Daniel blizz image 1.jpg',
+            'Daniel blizz image 3.png'
+        ],
+        biography: "Daniel Blizz, is a rising star in the Afrosoul scene, blending heartfelt lyrics with soulful rhythms to create music that resonates deeply with his audience. With a style that bridges tradition and innovation, Daniel's artistry is a refreshing addition to the genre. Whether through stirring melodies or thought-provoking storytelling, he invites listeners on a journey of connection and emotion. Keep an eye on this promising talent as he continues to carve out his space in the music industry.",
+        genre: 'Afro Soul',
+        year: '2025',
+        rank: "01"
     },
     {
-        image: artist_2,
-        name: 'Mikky Jon'
+        image: 'IMG_3001.png',
+        name: 'Jvstdede',
+        pictures: [
+            'IMG_3001.png',
+            'IMG_2999.png',
+            'IMG_3001.png'
+        ],
+        biography: '',
+        genre: 'Afro-Pop',
+        year: '2024',
+        rank: "02"
     },
     {
-        image: artist_3,
-        name: 'Mira Hany'
+        image: 'Great image 1.jpg',
+        name: 'Great',
+        pictures: [
+            'Great image 1.jpg',
+            'Great image 2.jpg'
+        ],
+        biography: "GREAT is more than just an artist—he is a movement. With his unique sound, Afro-Revolution, he fuses deep African-themed lyricism with hip-hop soul, creating music that awakens, empowers, and inspires. Born in Nigeria and shaped by experiences across Moscow and the UK, GREAT's journey has transformed his artistry. Now, under Hevy's management, GREAT is set to amplify his message, using music as a force for consciousness and change. He is revolutionizing Afro hip-hop from the diaspora, blending cultural depth with modern sound to create a movement that resonates across generations.",
+        genre:'Afro Revolution',
+        year: '2025',
+        rank: '03'
     },
-    {
-        image: artist_4,
-        name: 'Rayboy'
-    }
 ]
 
 export default function Artists() {
      const [visible, setVisible] = useState(false);
+     const { artistDetails, setArtistDetails } = useArtistContext();
      const router = useRouter();
+
+     const handleClick = (artist: ArtistDetailsType) => {
+        setArtistDetails(artist)
+        router.push('/artist_details')
+    }
+
+    console.log(artistDetails)
   return (
     <section className='w-screen py-20 sm:py-32 px-banner-clamp h-fit bg-[#141414] text-white sm:space-y-20 '>
          {visible && <ComingSoon setVisible={() => setVisible(false)} />}
@@ -48,11 +76,11 @@ export default function Artists() {
         <div className='w-full max-sm:gap-2 max-sm:overflow-x-scroll flex justify-between max-sm:mt-20'>
             {
                 artists.map((artist, index) => 
-                    <button onClick={() => router.push('/artist_details')} key={index} className='w-full h-[310px] relative sm:w-[23%] flex-shrink-0 max-sm:mb-3'>
+                    <button onClick={() => handleClick(artist)} key={index} className='w-full h-[310px] sm:h-[380px] relative sm:w-[32%] flex-shrink-0 max-sm:mb-3'>
                             <div className='absolute w-full h-full top-0'>
                                 <div className='relative w-full h-full'> 
                                     <Image 
-                                        src={artist.image}
+                                        src={`/images/${artist.image}`}
                                         fill 
                                         alt={artist.name}
                                         className='object-cover'

@@ -1,20 +1,28 @@
-import { Artists } from '@/app/artists/page'
 import Image from 'next/image'
 import React from 'react'
 import { useRouter } from 'next/navigation'
-export default function List({data}: {data: Artists[]}) {
-    const route = useRouter()
+import { ArtistDetailsType, useArtistContext } from './artistContext'
+export default function List({data}: {data: ArtistDetailsType[]}) {
+     const { artistDetails, setArtistDetails } = useArtistContext();
+         const router = useRouter();
+    
+         const handleClick = (artist: ArtistDetailsType) => {
+            setArtistDetails(artist)
+            router.push('/artist_details')
+        }
+    
+        console.log(artistDetails)
   return (
     <section className='w-full text-white'>
         {
-            data.map((datum:Artists, index: number) => 
-                <div onClick={() => route.push('/artist_details')} key={index} className='py-5 flex cursor-pointer items-center gap-5 motion-preset-slide-right '>
+            data.map((datum:ArtistDetailsType, index: number) => 
+                <div onClick={() => handleClick(datum)} key={index} className='py-5 flex cursor-pointer items-center gap-5 motion-preset-slide-right '>
                     <div className='text-xl sm:text-5xl'>
                         {index <= 9 ? 0 : ''}{index +1} 
                     </div>
                     <div className='h-[150px] sm:h-[200px] w-full sm:w-[20%] relative'>
                         <Image 
-                            src={datum.image}
+                            src={`/images/${datum.pictures[0]}`}
                             fill
                             alt={datum.name}
                             className='object-cover'

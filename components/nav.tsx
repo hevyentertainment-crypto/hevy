@@ -59,7 +59,7 @@ export default function Nav() {
         </Link>
     </div>
     }
-        <section className={`${isScrolled ? ' backdrop-blur-xl text-white shadow-sm ' : 'bg-transparent'} text-white py-5 px-banner-clamp flex justify-between items-center fixed w-full z-40 `}>
+        <section className={` ${isScrolled ? ' backdrop-blur-3xl text-white shadow-sm ' : 'bg-transparent'} text-white py-5 px-banner-clamp flex justify-between items-center fixed w-full z-40 `}>
         
         <div className='flex items-center w-[30%]'>
             <div >

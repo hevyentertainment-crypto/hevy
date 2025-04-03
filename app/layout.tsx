@@ -1,3 +1,4 @@
+"use client"
 // import type { Metadata } from "next";
 import "./globals.css";
 import { Montserrat } from "next/font/google";

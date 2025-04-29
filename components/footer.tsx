@@ -1,10 +1,29 @@
+"use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaFacebook, FaInstagram, FaRegCopyright, FaRegEnvelope, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import artists from '@/app/artists/allartists';
+import { ArtistDetailsType, useArtistContext } from './artistContext';
+import { useRouter } from 'next/navigation';
+
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const [allArtists, setartists] = useState<any>([])
+const { setArtistDetails } = useArtistContext();
+
+  useEffect(() => {
+    if(artists){
+      setartists(artists)
+    }
+  }, [artists])
+
+  const handleClick = (artist: ArtistDetailsType) => {
+          setArtistDetails(artist)
+          router.push('/artist_details')
+  }
+     const router = useRouter();
   return (
     <section className='bg-[#141414] '>
         <div className='px-banner-clamp py-10 bg-[#1E1E1E] max-sm:space-y-10 sm:flex justify-between'>
@@ -13,23 +32,18 @@ export default function Footer() {
 
                 <p className='flex flex-col gap-10 text-white'>
                   <Link href={'/about'} className='hover:text-main'>About us</Link>
-                  <Link href={'/services'} className='hover:text-main'>Services</Link>
-                  <Link href={'/contact'} className='hover:text-main'>Contact</Link>
+                  {/* <Link href={'/services'} className='hover:text-main'>Services</Link>
+                  <Link href={'/contact'} className='hover:text-main'>Contact</Link> */}
                 </p>
             </div>
             <div className='space-y-10'>
               <p className='text-secondary font-semibold text-xl'>ARTISTS</p>
 
-              <p className='flex flex-col gap-10 text-white'>
-                <Link href={'/about'} className='hover:text-main'>Jvstdede</Link>
-                <Link href={'/about'} className='hover:text-main'>Rema</Link>
-                <Link href={'/services'} className='hover:text-main'>Crayon</Link>
-                <Link href={'/contact'} className='hover:text-main'>Victony</Link>
-                <Link href={'/contact'} className='hover:text-main'>Fave</Link>
-                <Link href={'/contact'} className='hover:text-main'>Davido</Link>
-                <Link href={'/contact'} className='hover:text-main'>Burna boy</Link>
-                <Link href={'/contact'} className='hover:text-main'>Wizkid</Link>
-                <Link href={'/contact'} className='hover:text-main'>Runtown</Link>
+              <p className='flex flex-col gap-10 text-white items-start'>
+                {
+                  allArtists && allArtists.map((artist: ArtistDetailsType, key: number) => <button  onClick={() => handleClick(artist)} key={key} className='hover:text-main'>{artist.name}</button>)
+                }
+                
               </p>
             </div>
             <div  className='space-y-10'>

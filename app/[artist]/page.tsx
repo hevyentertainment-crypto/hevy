@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const platformIcons = {
     spotify: '/icons/music-service_spotify 1.svg',
-    apple: '/icons/apple-music.svg',
+    apple: '/icons/Apple_Music_icon.svg',
     youtube: 'https://services.linkfire.com/logo_youtubemusic_onlight.svg',
     soundcloud: 'https://services.linkfire.com/logo_soundcloud_onlight.svg',
     deezer: '/icons/music-service_deezer 1.svg',

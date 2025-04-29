@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 
 export default function Footer() {
   const year = new Date().getFullYear()
-  const [allArtists, setartists] = useState<any>([])
+  const [allArtists, setartists] = useState<ArtistDetailsType[]>([])
 const { setArtistDetails } = useArtistContext();
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 "use client"
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import Image from "next/image";
 import { TbArrowsExchange2 } from "react-icons/tb";
 import { useRouter } from "next/navigation";
@@ -31,7 +31,7 @@ export interface Platforms {
 
 const platformIcons = {
   spotify: '/icons/music-service_spotify 1.svg',
-  apple: '/icons/apple-music.svg',
+  apple: '/icons/Apple_Music_icon.svg',
   youtube: 'https://services.linkfire.com/logo_youtubemusic_onlight.svg',
   soundcloud: 'https://services.linkfire.com/logo_soundcloud_onlight.svg',
   deezer: '/icons/music-service_deezer 1.svg',
@@ -259,12 +259,14 @@ export default function Home() {
                                     platformsArray.map(([key,value]: [string, string], i: number) => {  
                                     return ( value !== '' &&
                                         <div key={i} className='flex justify-between p-3 hover:bg-gray-100'>
-                                            <img 
-                                                src={platformsArray && key  === 'spotify' ? platformIcons.spotify : key=== 'apple' ? platformIcons.apple : key=== 'youtube' ? platformIcons.youtube : key=== 'soundcloud' ? platformIcons.soundcloud : key=== 'deezer' ? platformIcons.deezer : key=== 'tidal' ? platformIcons.tidal : key=== 'amazon' ? platformIcons.amazon : key=== 'audiomack' ? platformIcons.audiomack : key=== 'bandcamp' ? platformIcons.bandcamp : key=== 'boomplay' ? platformIcons.boomplay : key=== 'Google Play' ? platformIcons.google : key=== 'itunes' ? platformIcons.itunes : platformIcons.shazam}
-                                                width={100} height={40}
-                                                className='object-contain'
-                                            />
-                                            <a href={value} target='_blank' className='text-[10px] px-3 py-2  bg-gray-300 rounded-xl'>
+                                            <p className="flex items-center gap-2 text-xs font-semibold">
+                                              <img 
+                                                  src={platformsArray && key  === 'spotify' ? platformIcons.spotify : key=== 'apple' ? platformIcons.apple : key=== 'youtube' ? platformIcons.youtube : key=== 'soundcloud' ? platformIcons.soundcloud : key=== 'deezer' ? platformIcons.deezer : key=== 'tidal' ? platformIcons.tidal : key=== 'amazon' ? platformIcons.amazon : key=== 'audiomack' ? platformIcons.audiomack : key=== 'bandcamp' ? platformIcons.bandcamp : key=== 'boomplay' ? platformIcons.boomplay : key=== 'Google Play' ? platformIcons.google : key=== 'itunes' ? platformIcons.itunes : platformIcons.shazam}
+                                                  className={`object-contain ${key === 'apple' ? 'w-fit h-[30px]' : 'w-[100px] h-[40px]'}`}
+                                              />
+                                              {key === 'apple' && <p className="text-[#FB3D56]">Apple Music</p>}
+                                            </p>
+                                            <a href={value} target='_blank' className={`text-[10px] px-3 py-2  bg-gray-300 rounded-xl`}>
                                                 PLAY
                                             </a>
                                         </div>
@@ -289,14 +291,14 @@ export default function Home() {
           <div className="w-screen h-screen absolute">
               <div className="w-screen h-screen relative">
                   <Image 
-                    src={'/images/image_fx_ (38).jpg'}
+                    src={'/images/0bc412c5af40c081f283c80fc0048918.jpg'}
                     alt="Image"
                     fill
                     className="object-cover"
                   />
               </div>
           </div>
-          <div className="h-screen  absolute z-50  backdrop-blur-3xl py-6 w-screen md:py-10 md:px-32 font-sans overflow-y-scroll">
+          <div className="h-screen  absolute z-50 backdrop-blur-xl  sm:backdrop-blur-3xl py-6 w-screen md:py-10 md:px-32 font-sans overflow-y-scroll">
             {/* Header */}
             <header className="flex justify-between items-center mb-8 px-3">
               <Link href={'/link'} className="text-2xl sm:text-8xl font-extrabold text-white max-sm:px-6">HEVY SOUNDS</Link>
@@ -319,7 +321,7 @@ export default function Home() {
                 <div className="flex gap-10 justify-center py-10">
                     <div className="relative w-1/3 h-[500px] max-sm:hidden">
                       <Image 
-                        src={'/images/a77387408f324aca89e9aa977daf7fad.jpg'}
+                        src={'/images/Rema-scaled.jpg'}
                         fill
                         alt="Display image"
                         className="object-cover rounded-xl"
@@ -345,11 +347,17 @@ export default function Home() {
                 </div>
               )
             }
-            {formStep === 2 && <div className="flex sm:flex-row flex-col gap-8 justify-between h-fit sm:py-20 bg-white sm:px-8 p-5 sm:rounded-xl">
+
+           
+
+            {formStep === 2 && <div className="flex sm:flex-row flex-col gap-8 justify-between items-center h-fit sm:py-10 bg-gray-300 sm:px-8 p-5 sm:rounded-xl">
+              
               {/* Form Section */}
               <div className="space-y-6 sm:w-[60%]">
                 {/* Platform Input Fields */}
-
+                <p className="text-5xl font-bold text-main">
+                  {formDetails.artistName} - {formDetails.songTitle}
+                </p>
                 <div className="flex justify-between items-center gap-3">
                       <div className="w-1/2">
                           <PlatformInput onChange={handleInputChange} value={platforms.boomplay} label="boomplay" icon="/icons/music-service_boomplay_updated 1.svg" />
@@ -377,7 +385,7 @@ export default function Home() {
 
                 <div className="flex justify-between items-center gap-3">
                       <div className="w-1/2">
-                      <PlatformInput onChange={handleInputChange} label="apple" value={platforms.apple} icon="/icons/apple-music.svg" />
+                      <PlatformInput onChange={handleInputChange} label="apple" value={platforms.apple} icon="/icons/Apple_Music_icon.svg" />
                       </div>
                       <div className="w-1/2">
                       <PlatformInput onChange={handleInputChange} label="soundcloud" value={platforms.soundcloud} icon="https://services.linkfire.com/logo_soundcloud_onlight.svg" />
@@ -402,7 +410,7 @@ export default function Home() {
               </div>
 
               {/* Image Upload Section */}
-              <div className="w-full max-sm:h-[300px] sm:w-[30%] sm:max-h-[400px] border-2 border-dashed border-gray-300 p-8 rounded-md flex justify-center items-center relative">
+              <div className="w-full max-sm:h-[300px] sm:w-[30%] sm:h-[400px] border-2 border-dashed border-gray-400 p-8 rounded-md flex justify-center items-center relative">
                 {imagePreview ? (
                 <>
                   <Image
@@ -445,7 +453,7 @@ export default function Home() {
 
             {/* Buttons */}
             <div className="flex justify-center gap-4 mt-8">
-                {formStep === 2 &&  <button onClick={handlePreview} className="py-2 w-full sm:w-[20%] border max-sm:mx-6 max-sm:bg-main max-sm:text-white border-blue-600 text-blue-600 rounded hover:bg-blue-50">
+                {formStep === 2 &&  <button onClick={handlePreview} className="py-2 w-full sm:w-[20%] border max-sm:mx-6 bg-main text-white border-blue-600 rounded hover:bg-main/80">
                     Preview
                   </button>}
                 { formStep === 1 && <button onClick={handleContinue} className="w-full max-sm:mx-8 sm:w-[20%] py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
@@ -463,9 +471,20 @@ export default function Home() {
 
 // Platform Input Field Component
 const PlatformInput = ({ label, icon, onChange, value }: PlatformInputProps) => {
+
+  const [isApple, setIsApple] = useState(false);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(label, event.target.value);
   };
+
+
+
+  useEffect(() => {
+    if(icon === '/icons/Apple_Music_icon.svg'){
+      setIsApple(true);
+    }
+  }, [icon])
+
 
   return (
     <div className="flex items-center space-x-4 w-full">
@@ -474,14 +493,18 @@ const PlatformInput = ({ label, icon, onChange, value }: PlatformInputProps) => 
           htmlFor={label.toLowerCase().replace(" ", "-")}
           className="block mb-1 text-gray-700 font-medium"
         >
-          <Image src={icon} alt={`${label} Logo`} width={100} height={40} />
+         <p className="flex items-center gap-2">
+            <Image src={icon} alt={`${label} Logo`} width={0} height={0} unoptimized={true} className={`${isApple ? 'w-fit h-[30px] mb-2' : 'w-[100px] h-[40px]'}`} />
+            {icon === '/icons/Apple_Music_icon.svg' && <p className="text-[#FB3D56] text-xs font-bold">Apple Music</p>}
+         </p>
+
         </label>
         <input
           id={label.toLowerCase().replace(" ", "-")}
           type="text"
           value={value}
           placeholder="Enter the link"
-          className="w-full border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-600 bg-transparent"
+          className="w-full border-2 border-gray-400/20 rounded p-2 focus:ring-2 focus:ring-blue-600 bg-transparent"
           onChange={handleChange}
         />
       </div>

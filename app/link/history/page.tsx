@@ -91,7 +91,15 @@ export default function History() {
       </button>
 
      <div className='w-full max-sm:overflow-x-scroll'>
-     <table className='w-full border-separate border-spacing-y-4 min-w-[600px]'>
+
+     {
+                    isLoading && (
+                       <div className='py-10 w-full h-full'>
+                         <ImSpinner2 className='animate-spin text-6xl  text-white' />
+                       </div>
+                    )
+                }
+     {filteredData && filteredData.length > 0 && <table className='w-full border-separate border-spacing-y-4 min-w-[800px]'>
             <thead>
                 <tr className='font-semibold text-white'>
                     <td className='px-4'>Song title</td>
@@ -101,17 +109,11 @@ export default function History() {
                 </tr>
             </thead>
             <tbody className='text-sm'>
-                {
-                    isLoading && (
-                       <div className='py-10 w-full h-full'>
-                         <ImSpinner2 className='animate-spin text-6xl  text-white' />
-                       </div>
-                    )
-                }
+               
                 {
                     filteredData && filteredData.map((datum: Racord, index: number) =>
                         <tr key={index} className='bg-gray-100 p-2 hover:shadow-md shadow-gray-50 rounded-xl hover:bg-main hover:text-white'>
-                            <td className='py-3 px-4  rounded-l-xl'>
+                            <td className='py-3 px-4 rounded-l-xl'>
                                 {datum.title}
                             </td>
                             <td className='py-3 '>
@@ -125,7 +127,7 @@ export default function History() {
                                     <LuCopy />
                                 </span>
                             </td>
-                            <td className='py-3   rounded-r-xl'>
+                            <td className='py-3 rounded-r-xl'>
                                 { moment(datum.createdAt).format('h:mma : MMM D, YYYY') }
                             </td>
                         </tr>
@@ -133,7 +135,15 @@ export default function History() {
                 }
             </tbody>
             
-      </table>
+      </table>}
+
+      {
+        filteredData && filteredData.length === 0 && (
+            <div className='py-10 w-full h-full'>
+                <h1 className='text-white text-2xl font-semibold'>No songs found</h1>
+            </div>
+        )
+      }
      </div>
         </section>
     </section>

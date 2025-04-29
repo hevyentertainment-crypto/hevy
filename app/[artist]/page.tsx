@@ -78,10 +78,13 @@ export default function ArtistLink() {
                                     platformsArray && platformsArray.map(([key,value]: [string, string], i: number) => {  
                                     return ( value !== '' &&
                                         <Link href={value} target='_blank' key={i} className='flex justify-between p-3 hover:bg-gray-100 cursor-pointer'>
-                                            <img 
-                                                src={platformsArray && key  === 'spotify' ? platformIcons.spotify : key=== 'apple' ? platformIcons.apple : key=== 'youtube' ? platformIcons.youtube : key=== 'soundcloud' ? platformIcons.soundcloud : key=== 'deezer' ? platformIcons.deezer : key=== 'tidal' ? platformIcons.tidal : key=== 'amazon' ? platformIcons.amazon : key=== 'audiomack' ? platformIcons.audiomack : key=== 'bandcamp' ? platformIcons.bandcamp : key=== 'boomplay' ? platformIcons.boomplay : key=== 'Google Play' ? platformIcons.google : key=== 'itunes' ? platformIcons.itunes : platformIcons.shazam}
-                                                width={100} height={40} className='object-contain'
-                                            />
+                                           <p className="flex items-center gap-2 text-xs font-semibold">
+                                              <img 
+                                                  src={platformsArray && key  === 'spotify' ? platformIcons.spotify : key === 'apple' ? platformIcons.apple : key=== 'youtube' ? platformIcons.youtube : key=== 'soundcloud' ? platformIcons.soundcloud : key=== 'deezer' ? platformIcons.deezer : key=== 'tidal' ? platformIcons.tidal : key=== 'amazon' ? platformIcons.amazon : key=== 'audiomack' ? platformIcons.audiomack : key=== 'bandcamp' ? platformIcons.bandcamp : key=== 'boomplay' ? platformIcons.boomplay : key=== 'Google Play' ? platformIcons.google : key=== 'itunes' ? platformIcons.itunes : platformIcons.shazam}
+                                                  className={`object-contain ${key === 'apple' ? 'w-fit h-[30px]' : 'w-[100px] h-[40px]'}`}
+                                              />
+                                              {key === 'apple' && <p className="text-[#FB3D56]">Apple Music</p>}
+                                            </p>
                                             <button className='text-[10px] h-fit px-3 py-2 bg-gray-300 rounded-xl'>
                                                 PLAY
                                             </button>

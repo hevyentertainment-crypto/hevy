@@ -240,13 +240,27 @@ export default function Home() {
 
             <div className='w-full sm:w-[25%] h-fit'>
                            <div className='relative w-full h-[300px]'>
-                               <Image 
-                                   fill
-                                   src={imagePreview || '/images/BurnaBoy.jpg'}
-                                   alt='Aritist image'
-                                   className='object-cover'
-                               />
-                           </div>
+                                <div className="absolute w-full h-full">
+                                    <div className="relative w-full h-full">
+                                        <Image 
+                                            fill
+                                            src={imagePreview || '/images/BurnaBoy.jpg'}
+                                            alt='Aritist image'
+                                            className='object-cover'
+                                        />
+                                    </div>
+                                </div>
+                                <div className="absolute w-full h-full backdrop-blur-xl flex items-center justify-center">
+                                      <div className="relative w-full h-full">
+                                        <Image 
+                                            fill
+                                            src={imagePreview || '/images/BurnaBoy.jpg'}
+                                            alt='Aritist image'
+                                            className='object-contain'
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                            <div className='bg-gray-900 text-white px-2 py-3 text-sm space-y-1'>
                                <div className='flex justify-between'>
                                    <p>{formDetails.artistName} - {formDetails.songTitle}</p>

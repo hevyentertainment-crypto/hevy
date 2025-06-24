@@ -59,13 +59,27 @@ export default function ArtistLink() {
                 {/* <div className='py-10'></div> */}
                 <div className='w-[90%] sm:w-[20%] h-fit'>
                     <div className='relative w-full h-[300px]'>
-                        <Image 
-                            fill
-                            src={data?.posterImage}
-                            alt='Aritist image'
-                            className='object-cover'
-                        />
-                    </div>
+                                                    <div className="absolute w-full h-full">
+                                                        <div className="relative w-full h-full">
+                                                            <Image 
+                                                                fill
+                                                                src={data.posterImage || '/images/BurnaBoy.jpg'}
+                                                                alt='Aritist image'
+                                                                className='object-cover'
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div className="absolute w-full h-full backdrop-blur-xl flex items-center justify-center">
+                                                          <div className="relative w-full h-full">
+                                                            <Image 
+                                                                fill
+                                                                src={data.posterImage  || '/images/BurnaBoy.jpg'}
+                                                                alt='Aritist image'
+                                                                className='object-contain'
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
                     <div className='bg-gray-900 text-white px-2 py-3 text-sm space-y-1'>
                         <div className='flex justify-between'>
                             <p>{data?.name} - {data.title}</p>

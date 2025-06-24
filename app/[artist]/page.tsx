@@ -57,7 +57,7 @@ export default function ArtistLink() {
        {data && 
             <div className='w-screen h-screen backdrop-blur-xl absolute flex flex-col items-center overflow-y-scroll pt-16 pb-10'>
                 {/* <div className='py-10'></div> */}
-                <div className='w-[90%] sm:w-[20%] h-fit'>
+                <div className='w-[80%] sm:w-[20%] h-fit'>
                     <div className='relative w-full h-[300px]'>
                                                     <div className="absolute w-full h-full">
                                                         <div className="relative w-full h-full">

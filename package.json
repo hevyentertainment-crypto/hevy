@@ -1,11 +1,16 @@
 {
   "name": "hevy",
   "version": "0.1.0",
+  "author": {
+    "name": "XOLO",
+    "email": "xoloyinks@gmail.com"
+  },
+  "description": "Hevy web application",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node init && next dev",
+    "build": "node init && next build",
+    "start": "node init && next start",
     "lint": "next lint"
   },
   "packageManager": "npm@10.5.2",

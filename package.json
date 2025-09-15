@@ -1,6 +1,11 @@
 {
   "name": "hevy",
   "version": "0.1.0",
+  "author": {
+    "name": "XOLO",
+    "email": "xoloyinks@gmail.com"
+  },
+  "description": "Hevy web application",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -19,7 +19,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
 
-
 export default function Auth() {
     const [submitData, { isLoading }] = useLoginMutation();
     const [ forgetData, { isLoading: forgetLoading }] = useForgotPasswordMutation();
@@ -31,7 +30,6 @@ export default function Auth() {
     const [forgetDetails, setForgetDetails] = useState({
         email: formDetails.email
     });
-
 
     const effectImages = [
         swiper_2,
